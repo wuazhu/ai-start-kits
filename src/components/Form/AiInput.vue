@@ -15,7 +15,7 @@
 <script>
 export default {
   name:'input',
-  props:["defaultValue",'edit','temp'],//defaultValue为默认初始值
+  props:["defaultValue",'edit','temp'],//defaultValue为默认的初始值
   data(){
     return{
       type:'text',//默认text类型

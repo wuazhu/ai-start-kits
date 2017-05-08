@@ -36,7 +36,7 @@
       <p class="input-border">
         <label class="title"><nobr>验证码:</nobr></label>
         <input type="text"name="mobile"placeholder="请输入验证码"required="required"/>
-        <img src="../assets/num_img.png" alt="验证码" class="num_img">
+        <img src="../../assets/num_img.png" alt="验证码" class="num_img">
       </p>
       <p class="input-border">
         <label class="title"><nobr>银行卡:</nobr></label>
@@ -60,13 +60,13 @@
         <p class="input-border">
           <label class="title">qq:</label>
           <input type="text"name="qq"placeholder="请输入qq号"required="required" />
-          <img src="../assets/shutdown.png" alt="关闭" class="shutdown">
-          <img src="../assets/shut.png" alt="叉子" class="shut">
+          <!-- <img src="../../assets/shutdown.png" alt="关闭" class="shutdown">
+          <img src="../../assets/shut.png" alt="叉子" class="shut"> -->
         </p>
         <p class="input-border">
           <label class="title"><nobr>验证码:</nobr></label>
           <input type="text"name="mobile"placeholder="请输入验证码"required="required"/>
-          <img src="../assets/num_img.png" alt="验证码" class="num_img">
+          <!-- <img src="../../assets/num_img.png" alt="验证码" class="num_img"> -->
         </p>
         <p class="input-border">
           <label class="title"><nobr>银行卡:</nobr></label>

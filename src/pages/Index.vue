@@ -65,10 +65,10 @@
 // }
 </style>
 <script>
-import AiForm from "../components/AiForm.vue";
-import AiLabel from "../components/AiLabel.vue";
-import AiInput from "../components/AiInput.vue";
-import AiButton  from "../components/AiButton.vue";
+import AiForm from "../components/Form/AiForm.vue";
+import AiLabel from "../components/Form/AiLabel.vue";
+import AiInput from "../components/Form/AiInput.vue";
+import AiButton  from "../components/Form/AiButton.vue";
   export default {
     data() {
       return {
