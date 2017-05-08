@@ -2,13 +2,13 @@
   "getBordList": [
     {
       "id":1,
-      "title": "开放产品",
+      "title": "banner",
       "url": "/"
     },
     {
       "id":2,
-      "title": "开放产品2",
-      "url": "home"
+      "title": "counter 计数器",
+      "url": "counter"
     },
     {
       "id":3,
@@ -25,25 +25,25 @@
     {
       "id": 1,
       "title": "幻灯片第1张",
-      "imgUrl": "http://img.mukewang.com/5903688d000141fd12000460.jpg",
+      "src": "http://img.mukewang.com/5903688d000141fd12000460.jpg",
       "url": "http://imooc.com"
     },
     {
       "id":2,
       "title":"幻灯片第2张",
-      "imgUrl": "http://img.mukewang.com/590a9da300016c5612000460.jpg",
+      "src": "http://img.mukewang.com/590a9da300016c5612000460.jpg",
       "url": "http://imooc.com"
     },
     {
       "id":3,
       "title":"幻灯片第3张",
-      "imgUrl": "http://img.mukewang.com/590ad0ca00018d0b12000460.jpg",
+      "src": "http://img.mukewang.com/590ad0ca00018d0b12000460.jpg",
       "url": "http://imooc.com"
     },
     {
       "id":4,
       "title":"幻灯片第3张",
-      "imgUrl": "http://img.mukewang.com/5903665f00011baa12000460.jpg",
+      "src": "http://img.mukewang.com/5903665f00011baa12000460.jpg",
       "url": "http://imooc.com"
     }
   ]

@@ -1,0 +1,190 @@
+@import "./config";
+  @listwidth:100%;
+
+  @leftpadding:31 / 75 * 1rem;
+  @rightpadding:31 / 75 * 1rem;
+
+  @hdheight:60/75*1rem;
+  @itemheight:86/75*1rem;
+
+  @hdsize:26;
+  @itemsize:32;
+
+  @hdbgcolor:#efeff4;
+  @bdbgcolor:#fff;
+
+  @hdcolor:#4e4e4e;
+  @itemcolor:#202020;
+
+  @bordercolor:#dbdbde;
+  .AiList{
+  	width: 100%;
+  }
+  a{
+    .clearfix;
+    text-decoration: none;
+  }
+  /*清楚浮动*/
+  .clearfix{
+    zoom:1;
+    &:after{
+      clear:both;   
+      overflow:hidden; 
+      content:"";   
+      display:table; 
+    }
+  }
+  /*list-bd-right*/
+  .right{
+    .clearfix;
+      p{
+        display: inline-block;
+        .fs(32);
+        font-family: "PingFangSC";
+        color: rgb( 147, 147, 147 );
+        position: relative;
+        float: right;
+      }
+      /* > */
+      .righticon{
+        margin:28/75*1rem 0 0 14/75*1rem;
+        position: relative;
+        float: right;
+        width: 18/75*1rem;
+        height: 30/75*1rem;
+        background: url(../../assets/chevron-right.png) center center no-repeat;
+      }
+      /* 角标 */
+      .badge{
+        margin:28/75*1rem 0 0 14/75*1rem;
+        position: relative;
+        float: right;
+        .width(35);
+        height: height(34);
+        background: url(../../assets/ellipse.png) center center no-repeat;
+      }
+      /* switch组件 */
+      .switch{
+        margin:28/75*1rem 0 0 14/75*1rem;
+        position: relative;
+        float: right;
+        .width(82);
+        height: height(50);
+      }
+  }
+  /* itembd */
+  .setboxstyle(@Height,@Bgcolor){
+	  margin: 0;
+  	padding: 0 @rightpadding 0 @leftpadding;
+  	width: auto;
+  	height: @Height;
+  	line-height: @Height;
+	  background-color: @Bgcolor;
+	  border: 1/75*1rem solid;
+	  border-color: @bordercolor transparent;
+	  overflow: hidden;
+  }
+  
+  /* title */
+  .list-hd{
+	 .setboxstyle(@hdheight,@hdbgcolor);
+  	.fs(@hdsize);
+  	 color: @hdcolor;
+  	 font-family: "微软雅黑";
+  }
+  /* item-list-bd */
+  .list-bd{
+    .clearfix;
+  	.setboxstyle(@itemheight,@bdbgcolor);
+
+  	.list-item{
+      
+  		font-family: "PingFangSC";
+      .fs(@itemsize);
+  		color: @itemcolor;
+  		line-height: @itemheight;
+  		text-align: left;
+  		display: inline-block;
+  		position: relative;
+  		float: left;
+  	}
+    .lefticon{
+        margin:28/75*1rem 20/75*1rem 0 0;
+        position: relative;
+        float: left;
+        width: 38/75*1rem;
+        height: 32/75*1rem;
+        background: url(../../assets/1.png) center center no-repeat;
+      }
+  }
+
+  /* text-list-bd */
+  .text-list-bd{
+    margin: 0;
+    padding: 0 @rightpadding 0 @leftpadding;
+    border:1/75*1rem solid;
+    border-color: @bordercolor transparent;
+    .pb(30);
+    .clearfix;
+    .text-list-hd{
+      height: 87 / 72 * 1rem;
+      line-height: 87 / 72 * 1rem;
+    }
+    h3{
+      .fs(32);
+      font-family: "微软雅黑";
+      position: relative;
+      float: left;
+    }
+    
+    .text-list-content{
+      h4{
+        .fs(30);
+        font-family: "微软雅黑";
+        color: #353535;
+        .mb(26);
+      }
+      p{
+        display: inline-block;
+        .fs(26);
+        font-family: "微软雅黑";
+        color: rgb( 133, 133, 133 );
+        line-height: 1.385;
+
+      }
+    }
+  }
+  .img-list-bd{
+    border:1/75*1rem solid;
+    border-color: @bordercolor transparent; 
+    .height(129);
+    .clearfix;
+    .pd(20,31,20,31);
+    img{
+      .width(90);
+      .height(90);
+      position: relative;
+      float: left;
+    }
+    .img-list-content{
+      position: relative;
+      float: left;
+      .ml(20);
+      line-height: 42/75*1rem;
+    }
+    .right{
+      i{
+        margin: 0;
+      }
+    }
+    h3{
+      .fs(32);
+      font-family: "微软雅黑";
+    }
+    h4{
+      .fs(30);
+      font-family: "微软雅黑";
+      color: #353535;
+    }
+  }  
+  
