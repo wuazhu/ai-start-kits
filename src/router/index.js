@@ -7,7 +7,7 @@ Vue.use(Router)
 import Index from '../pages/Index'
 import Uis from '../pages/Uis'
 import Charts  from '../pages/Charts'
-
+import List from '../pages/List'
 
 export default new Router({
   mode: 'history',
@@ -24,6 +24,9 @@ export default new Router({
       path: '/charts',
       component: Charts
     },
-
+    {
+      path: '/list',
+      component: List
+    },
   ]
 })

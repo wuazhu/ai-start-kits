@@ -22,11 +22,11 @@
           <i :class="[x.lefticon]"></i>
           <p class="list-item">{{x.item}}</p>
           <div class="right">  
-            <p v-if="x.note">{{x.note}}</p>
             <i class="righticon" v-if="x.href"></i>
+            <p v-if="x.note">{{x.note}}</p>
             <p v-if="x.time">{{x.time}}</p>
             <i :class="[x.icon]" v-if="x.icon"></i>
-            <img src="../../assets/switch.png" class="switch" alt="" v-if="x.button">
+            <img src="../../assets/img/list/switch.png" class="switch" alt="" v-if="x.button">
           </div>
         </div>
       </template>
@@ -93,13 +93,10 @@ export default {
         return typeof(item.href)=="undefined";
       });
     },
-    
-
-
   },
   methods:{
    getSrc(img) {
-      return require(`../../assets/${img}`);
+      return require(`../../assets/img/list/${img}.png`);
     }
   }
 }
@@ -108,5 +105,4 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="less">
   @import "../../assets/less/Panel";
-  
 </style>

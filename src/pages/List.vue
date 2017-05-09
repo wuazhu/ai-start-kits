@@ -122,13 +122,13 @@ export default {
       ],
       imglist:[
         {
-          src:"img.png",
+          src:"img",
           title:"第一张精选",
           subtitle:"发行公司：滚石唱片",
           time:"2016-03"
         },
         {
-          src:"img.png",
+          src:"img",
           title:"第一张精选",
           subtitle:"发行公司：滚石唱片",
           time:"2016-03",
@@ -138,7 +138,7 @@ export default {
       ],
       imgtextlist:[
         {
-          src:"img.png",
+          src:"img",
           title:"第一张精选",
           subtitle:"发行公司：滚石唱片",
           text:"别问我风从哪里吹来别问我风明天是爱还是不爱一往情深也许最后带来是伤害别问我",
@@ -176,21 +176,21 @@ export default {
       ],
       cardlist3:[
         {
-          src:"img.png",
+          src:"img",
           title:"第一张精选",
           subtitle:"发行公司：滚石唱片",
           time:"2016-03",
           icon:"righticon"
         },
         {
-          src:"img.png",
+          src:"img",
           title:"第一张精选",
           subtitle:"发行公司：滚石唱片",
           time:"2016-03",
           icon:"righticon"
         },
         {
-          src:"img.png",
+          src:"img",
           title:"第一张精选",
           subtitle:"发行公司：滚石唱片",
           time:"2016-03",
@@ -205,6 +205,8 @@ export default {
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped>
-
+<style scoped lang="less">
+  .ai-list{
+      margin-bottom: 178/75*1rem;
+  }
 </style>
