@@ -19,12 +19,13 @@ export default {
 
 <style lang="less" scope>
 /*自定义css样式*/
-@f-size: 0.36rem;
+@fs: 0.36rem;
+@width:1.5rem;
 /*label标签的样式*/
 .title{
-    font-size: @f-size;
+    width: @width;
+    font-size: @fs;
     font-family: "Heiti SC";
     color: rgb(0, 0, 0);
-    // line-height: 1.8;
 }
 </style>

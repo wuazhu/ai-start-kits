@@ -13,7 +13,7 @@
       }
     ]"
   >
-  {{btnContent}}
+  <nobr>{{btnContent}}</nobr>
 
   </button>
 </template>
@@ -85,16 +85,19 @@
         font-size: @px * 2px;
     }
 }
-.num {
+.ai-button {
   .fs(28);
+  width: 177/75*1rem;
+  height: 69/75*1rem;
   font-family: "Heiti SC";
   color: rgb(65, 157, 245);
+  line-height: 0.75rem;
   background-color: white;
   -moz-transform: matrix( 0.99982671518641,0,0,1.00015305177178,0,0);
   -webkit-transform: matrix( 0.99982671518641,0,0,1.00015305177178,0,0);
   -ms-transform: matrix( 0.99982671518641,0,0,1.00015305177178,0,0);
 }
-.button1normal {
+.ai-button {
   // margin-top:32/72 *1rem;
   border-style: solid;
   border-width: 0.014rem;
@@ -109,5 +112,10 @@
     border-color: rgb(166, 206, 244);
   }
 }
-
+.is-disabled{
+    pointer-events: none;
+    cursor: not-allowed;
+    box-shadow: none;
+    opacity: .33;
+}
 </style>

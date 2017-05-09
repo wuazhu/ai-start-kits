@@ -1,6 +1,6 @@
 <template>
   <!-- <input :type="type" :name="name" :value="value" :placeholder='placeholder' > -->
-  <span class="">
+  <span class="input-span">
     <input :type="type"
           :name="name"
           :value="defaultValue"
@@ -11,7 +11,7 @@
     <span v-show="isinput">输入内容不能为空</span>
   </span>
 </template>
-
+import
 <script>
 export default {
   name:'input',
@@ -48,16 +48,21 @@ export default {
 }
 </script>
 
-<style lang="less" scope>
+<!-- <style lang="less" scope> -->
+
+<!-- @fs: 32;
 input{
-  // height: 0.7rem;
-  // font-size: 0.36rem;
-  margin-top: 0;
+  font-size: @fs/75* 1rem;
   border: none;
   outline: none;
   overflow: hidden;
 }
-// .input-border{
-//   border-bottom: solid #B7B7B7 0.014rem;
-// }
+.input-span{
+  text-align: left;
+  font-size: @fs/75 * 1rem;
+  font-family: "Heiti SC";
+} -->
+<!-- </style> -->
+<style lang='less' scope>
+  @import "../../assets/less/Input";
 </style>
