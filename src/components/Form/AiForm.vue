@@ -159,17 +159,17 @@ input{
   padding-left: 0.3rem;
   border-bottom: solid #B7B7B7 1px;
 }
-// .num {
-//
-//   font-size: @f-size;
-//   font-family: "Heiti SC";
-//   color: rgb(65, 157, 245);
-//   line-height: 0.75rem;
-//   background-color: white;
-//   -moz-transform: matrix( 0.99982671518641,0,0,1.00015305177178,0,0);
-//   -webkit-transform: matrix( 0.99982671518641,0,0,1.00015305177178,0,0);
-//   -ms-transform: matrix( 0.99982671518641,0,0,1.00015305177178,0,0);
-// }
+.num {
+
+  font-size: @f-size;
+  font-family: "Heiti SC";
+  color: rgb(65, 157, 245);
+  line-height: 0.75rem;
+  background-color: white;
+  -moz-transform: matrix( 0.99982671518641,0,0,1.00015305177178,0,0);
+  -webkit-transform: matrix( 0.99982671518641,0,0,1.00015305177178,0,0);
+  -ms-transform: matrix( 0.99982671518641,0,0,1.00015305177178,0,0);
+}
 // .button1normal {
 //   border-style: solid;
 //   border-width: 0.014rem;
