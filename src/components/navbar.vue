@@ -1,6 +1,6 @@
 <template>
   <nav class="footer">
-    <router-link class="nav" v-for="(item, index) in navItem" :to="item.path" key="index" active-class="active">
+    <router-link exact class="nav" v-for="(item, index) in navItem" :to="item.path" key="index" active-class="active">
       <i class="icon" :class="item.icon"></i>
       <span class="nav-text">{{ item.text }}</span>
     </router-link>
@@ -10,9 +10,12 @@
 @import '../assets/less/config.less';
   body{
     background: #f6f6f6;
+    margin: 0 auto;
   }
   .footer{
     position: fixed;
+    .width(750);
+    margin: 0 auto;
     bottom: 0;
     left: 0;
     right: 0;
@@ -26,12 +29,12 @@
       color: #838383;
       display: block;
       text-align: center;
-      font-size: 22px;
+      .fs(22);
       width: 100%;
       .icon{
         display: block;
-        width: 40px;
-        height: 40px;
+        .width(40);
+        .height(40);
         margin: 0 auto;
         &.icon-home{
           background: url('../assets/img/index/home@3x.png') center;

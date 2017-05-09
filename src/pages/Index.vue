@@ -1,41 +1,41 @@
 <template>
     <div class="index">
-      <img src="../assets/img/index/vue.jpg" class="index-banner" alt="">
+      <img src="../assets/img/index/2.jpg" class="index-banner" alt="">
       <div class="components">
-        <a href="/buttons">
+        <router-link to="/buttons">
           <img src="../assets/img/index/button_icon@3x.png" alt="">
           <span>按钮</span>
-        </a>
-        <a href="/tilps">
+        </router-link>
+        <router-link to="/tilps">
           <img src="../assets/img/index/hint_icon@3x.png" alt="">
           <span>提示</span>
-        </a>
-        <a href="/dialog">
+        </router-link>
+        <router-link to="/dialog">
           <img src="../assets/img/index/pop_icon@3x.png" alt="">
           <span>弹窗</span>
-        </a>
-        <a href="/list">
+        </router-link>
+        <router-link to="/list">
           <img src="../assets/img/index/list_icon@3x.png" alt="">
           <span>列表</span>
-        </a>
-        <a href="/form">
+        </router-link>
+        <router-link to="/form">
           <img src="../assets/img/index/form_icon@3x.png" alt="">
           <span>表单</span>
-        </a>
-        <a href="/charts">
+        </router-link>
+        <router-link to="charts">
           <img src="../assets/img/index/chart_icon@3x.png" alt="">
           <span>图表</span>
-        </a>
+        </router-link>
       </div>
       <div class="games">
-        <a href="/game1">
+        <router-link to="/game1">
           <img src="../assets/img/index/xspt@3x.png" alt="">
-        </a>
-        <a href="/game2">
+        </router-link>
+        <router-link to="/game2">
           <img src="../assets/img/index/jfcj@3x.png" alt="">
-        </a>
+        </router-link>
       </div>
-      <div class="height"></div>
+      <!-- <div class="height"></div> -->
     </div>
 </template>
 <style lang="less">
@@ -43,12 +43,30 @@
 @import '../assets/less/config.less';
 body{
   padding-bottom: 99px!important;
+
+}
+.app-view {
+  // background: orange;
+  position: absolute;
+  transition: all .7s cubic-bezier(.55,0,.6,1.1);
+}
+
+.slide-left-enter, .slide-right-leave-active {
+  opacity: 1;
+  -webkit-transform: translate(100%, 0);
+  transform: translate(100%, 0);
+}
+.slide-left-leave-active, .slide-right-enter {
+  opacity: 1;
+  -webkit-transform: translate(-100%, 0);
+  transform: translate(-100%, 0);
 }
 .height{
   height: 400px;
 }
 .index{
   .width(750);
+  margin: 0 auto;
   .fs(30);
   .index-banner{
     width: 100%;
@@ -56,18 +74,18 @@ body{
   }
   .games{
     background: #f6f6f6;
-    padding: 15px 0 15px 15px;
+    .pd(15,15, 15,15);
     overflow: hidden;
     a{
       float: left;
       background: #fff;
+      .mr(20);
       .width(350);
-      .height(184);
       box-sizing: border-box;
       .lh(184);
       text-align: center;
       &:nth-of-type(2){
-        margin-left: 15px;
+        margin-right: 0;
       }
       img{
         width: 90%;
@@ -117,7 +135,17 @@ import AiNav from '../components/navbar'
     },
     data() {
       return {
-
+        transitionName: 'slide-left'
+      }
+    },
+    watch: {
+      '$route' (to, from) {
+        // console.log(to.path)
+        const toDepth = to.path.split('/').length
+        console.log('to:',to)
+        const fromDepth = from.path.split('/').length
+        console.log('from:',from)
+        this.transitionName = toDepth < fromDepth ? 'slide-right' : 'slide-left'
       }
     }
   }

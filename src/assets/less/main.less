@@ -1,1 +1,39 @@
 @import './reset.less';
+@import './config.less';
+@font-face {
+  font-family: 'iconfont';  /* project id 291630 */
+  src: url('http://at.alicdn.com/t/font_gl5wq7mr17lrqkt9.eot');
+  src: url('http://at.alicdn.com/t/font_gl5wq7mr17lrqkt9.eot?#iefix') format('embedded-opentype'),
+  url('http://at.alicdn.com/t/font_gl5wq7mr17lrqkt9.woff') format('woff'),
+  url('http://at.alicdn.com/t/font_gl5wq7mr17lrqkt9.ttf') format('truetype'),
+  url('http://at.alicdn.com/t/font_gl5wq7mr17lrqkt9.svg#iconfont') format('svg');
+}
+html,body{
+  height: 100%;
+}
+#app{
+  .width(750);
+  margin: 0 auto;
+  height: 100%;
+  overflow-x: hidden;
+}
+.app-view {
+  // background: orange;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  transition: all .7s cubic-bezier(.55,0,.6,1.1);
+  margin: 0 auto;
+}
+
+.slide-left-enter, .slide-right-leave-active {
+  opacity: 1;
+  -webkit-transform: translate(100%, 0);
+  transform: translate(100%, 0);
+}
+.slide-left-leave-active, .slide-right-enter {
+  opacity: 1;
+  -webkit-transform: translate(-100%, 0);
+  transform: translate(-100%, 0);
+}

@@ -11,7 +11,7 @@
     if (metaEl) {
         console.warn('将根据已有的meta标签来设置缩放比例');
         var match = metaEl.getAttribute('content').match(/initial\-scale=([\d\.]+)/);
-        console.log(match)
+        // console.log(match)
         if (match) {
             scale = parseFloat(match[1]);
             dpr = parseInt(1 / scale);
@@ -36,7 +36,7 @@
         var isAndroid = win.navigator.appVersion.match(/android/gi);
         var isIPhone = win.navigator.appVersion.match(/iphone/gi);
         var devicePixelRatio = win.devicePixelRatio;
-        console.log(devicePixelRatio)
+        // console.log(devicePixelRatio)
         if (isIPhone) {
             // iOS下，对于2和3的屏，用2倍的方案，其余的用1倍方案
             if (devicePixelRatio >= 3 && (!dpr || dpr >= 3)) {
