@@ -77,7 +77,7 @@
           <div>
             <p class="bottom-words">底部说明文字底部说明文字</p>
           </div>
-          <div>
+          <div class='bottom-div'>
             <input type="submit" value="确定" name="ok" class="button-ok button-ok-font" />
           </div>
         </div>
@@ -189,6 +189,10 @@ form fieldset{
   font-family: "Heiti SC";
   color: rgb(255, 255, 255);
   line-height: 0.882;
+}
+/*解决nav 遮挡最后按钮的问题*/
+.bottom-div{
+  .mb(106);
 }
 /*swith组件样式*/
 .switch{

@@ -64,58 +64,5 @@
   };
 </script>
 <style lang="less" scope>
-.fs(@px){
-    font-size: round(@px / 1.8) * 1px;
-    [data-dpr="2"] & {
-        font-size: @px * 1px;
-    }
-    // for mx3
-    [data-dpr="2.5"] & {
-        font-size: round(@px * 2.5 / 2) * 1px;
-    }
-    // for 小米note
-    [data-dpr="2.75"] & {
-        font-size: round(@px * 2.75 / 2) * 1px;
-    }
-    [data-dpr="3"] & {
-        font-size: round(@px / 2 * 3) * 1px;
-    }
-    // for 三星note4
-    [data-dpr="4"] & {
-        font-size: @px * 2px;
-    }
-}
-.ai-button {
-  .fs(28);
-  width: 177/75*1rem;
-  height: 69/75*1rem;
-  font-family: "Heiti SC";
-  color: rgb(65, 157, 245);
-  line-height: 0.75rem;
-  background-color: white;
-  -moz-transform: matrix( 0.99982671518641,0,0,1.00015305177178,0,0);
-  -webkit-transform: matrix( 0.99982671518641,0,0,1.00015305177178,0,0);
-  -ms-transform: matrix( 0.99982671518641,0,0,1.00015305177178,0,0);
-}
-.ai-button {
-  // margin-top:32/72 *1rem;
-  border-style: solid;
-  border-width: 0.014rem;
-  border-color: rgb(65, 157, 245);
-  border-radius: 0.083rem;
-  &:hover{
-    cursor: pointer;
-  }
-  &:active{
-    color: rgb(160, 206, 250);
-    background-color: white;
-    border-color: rgb(166, 206, 244);
-  }
-}
-.is-disabled{
-    pointer-events: none;
-    cursor: not-allowed;
-    box-shadow: none;
-    opacity: .33;
-}
+@import "../../assets/less/Button.less";
 </style>

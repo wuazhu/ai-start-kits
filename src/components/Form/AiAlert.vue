@@ -29,13 +29,5 @@ export default {
 </script>
 
 <style lang="less" scope>
-.worning{
-  color: white;
-  text-align: center;
-  margin: 0 auto;
-  padding-top:4%;
-  width: 750/75 * 1rem;
-  height: 74/75 * 1rem;
-  background-image: url(../../assets/img/form/worning.png);
-}
+@import "../../assets/less/Alert.less";
 </style>

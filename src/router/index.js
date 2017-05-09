@@ -8,6 +8,7 @@ import Index from '../pages/Index'
 import Uis from '../pages/Uis'
 import Charts  from '../pages/Charts'
 import List from '../pages/List'
+import Form from '../pages/Form'
 
 export default new Router({
   mode: 'history',
@@ -28,5 +29,9 @@ export default new Router({
       path: '/list',
       component: List
     },
+    {
+      path: '/form',
+      component: Form
+    }
   ]
 })
