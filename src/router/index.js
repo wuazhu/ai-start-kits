@@ -8,6 +8,7 @@ import Index from '../pages/Index'
 import Uis from '../pages/Uis'
 import Charts  from '../pages/Charts'
 
+
 export default new Router({
   mode: 'history',
   routes: [
@@ -22,6 +23,7 @@ export default new Router({
     {
       path: '/charts',
       component: Charts
-    }
+    },
+
   ]
 })
