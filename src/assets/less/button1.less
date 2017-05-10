@@ -1,0 +1,52 @@
+@import './main.less';
+.ai-button{
+	width: 100%;
+	height: 1.1rem;
+	border:0;
+	border-radius: 3px;
+	outline: none;
+}
+.primary{
+	color: #fff;
+	background: #419df5;
+	&:active{
+		background: #3187da;
+		cursor: pointer;
+	}
+	&.loading{
+		background-image: url(../img/button/loading-blue.gif);
+		background-repeat: no-repeat;
+		//background-size: 100% 100%;
+	}
+	&.disable{
+		background: #a0cefa;
+	}
+}
+.secondary{
+	color: #363636;
+	background: #fcfcfc;
+	border: 1px solid #eee;
+	&:active{
+		background: #e8e8e8;
+		cursor: pointer;
+	}
+	&.loading{
+		background-image: url(../img/button/loading-gray.gif);
+		background-repeat: no-repeat;
+		//background-size: 100% 100%;
+	}
+	&.disable{
+		background: #f9f9f9;
+		border: 1px solid #efefef;
+	}
+}
+.ghost{
+	color: #363636;
+	background: none;
+	border: 1px solid #dedede;
+	&:active{
+		background: #f3f3f4;
+		cursor: pointer;
+	}
+}
+
