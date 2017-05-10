@@ -14,12 +14,12 @@
             </div>
             <div class="input-border">
               <ai-label><nobr>手机号:</nobr></ai-label>
-              <ai-input type="text"name="mobile"placeholder="请输入手机号"required="required" :default-value="temp1" :temp="temp1" v-on:receive='fn' v-model='temp1' />
+              <ai-input type="text"name="mobile"placeholder="请输入手机号"required="required" :default-value="null" :temp="temp1" v-on:receive='fn' v-model='temp1' />
               <ai-button btn-content='获取验证码' class='num-btn'></ai-button>
             </div>
             <div class="input-border">
               <ai-label><nobr>手机号:</nobr></ai-label>
-              <ai-input type="text"name="mobile"placeholder="请输入手机号"required="required" :default-value="temp1" :temp="temp1" v-on:receive='fn' v-model='temp1' />
+              <ai-input type="text"name="mobile"placeholder="请输入手机号"required="required" :default-value="null" :temp="temp1" v-on:receive='fn' v-model='temp1' />
               <ai-button btn-content='45s' class='num-btn' disabled></ai-button>
             </div>
           </fieldset>
