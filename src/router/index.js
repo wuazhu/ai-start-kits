@@ -10,6 +10,7 @@ import Charts  from '../pages/Charts'
 import List from '../pages/List'
 import Form from '../pages/Form'
 import Button from '../pages/buttons'
+import Cards from '../pages/cards'
 
 export default new Router({
   mode: 'history',
@@ -37,6 +38,10 @@ export default new Router({
     {
       path: '/buttons',
       component: Button
+    },
+    {
+      path: '/cards',
+      component: Cards
     }
   ]
 })

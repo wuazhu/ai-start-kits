@@ -1,6 +1,6 @@
 <template>
   <div class="ai-list">
-      <router-link to="/">返回</router-link>
+      <goback></goback>
       <h3>列表模式的单选框</h3>
       <ai-panel :list="list"></ai-panel>
       
@@ -40,6 +40,7 @@
 <script>
 
 import AiPanel from '../components/Panel/Panel';
+import goback from '../components/goback';
 export default {
   name: 'AlList',
   props:{
@@ -208,7 +209,7 @@ export default {
 
     }
   },
-  components:{ AiPanel }
+  components:{ AiPanel,goback }
 }
 </script>
 
