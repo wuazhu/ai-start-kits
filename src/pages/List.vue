@@ -1,24 +1,35 @@
 <template>
   <div class="ai-list">
-      <ai-panel :list="list" header="列表模式的单选框"></ai-panel>
-
-      <ai-panel :list="notelist" header="右侧有注释列表"></ai-panel>
-
-      <ai-panel :list="hreflist" header="包含链接的列表"></ai-panel>
-
-      <ai-panel :list="cornerlist" header="右侧有角标"></ai-panel>
-
-      <ai-panel :list="badgelist" header="包含图标的列表"></ai-panel>
-
-      <ai-panel :list="textlist" type="textlist" header="这是文字列表"></ai-panel>
-
-      <ai-panel :list="imglist" type="textlist" header="这是图片列表"></ai-panel>
-
-      <ai-panel :list="imglist"  type="textlist" liststyle="insert" header="内嵌式"></ai-panel>
-
-      <ai-panel :list="imgtextlist" type="textlist" header="内嵌式图片文字列表"></ai-panel>
+      <router-link to="/">返回</router-link>
+      <h3>列表模式的单选框</h3>
+      <ai-panel :list="list"></ai-panel>
       
-      <ai-panel :list="cardlist1" liststyle="card" header="card"></ai-panel>
+      <h3>右侧有注释列表</h3>
+      <ai-panel :list="notelist"></ai-panel>
+      
+      <h3>包含链接的列表</h3>
+      <ai-panel :list="hreflist"></ai-panel>
+      
+      <h3>右侧有角标</h3>
+      <ai-panel :list="cornerlist"></ai-panel>
+      
+      <h3>包含图标的列表</h3>
+      <ai-panel :list="badgelist"></ai-panel>
+      
+      <h3>这是文字列表</h3>
+      <ai-panel :list="textlist" type="textlist"></ai-panel>
+      
+      <h3>这是图片列表</h3>
+      <ai-panel :list="imglist" type="textlist"></ai-panel>
+      
+      <h3>内嵌式</h3>
+      <ai-panel :list="imglist"  type="textlist" liststyle="insert"></ai-panel>
+      
+      <h3>内嵌式图片文字列表</h3>
+      <ai-panel :list="imgtextlist" type="textlist"></ai-panel>
+      
+      <h3>card</h3>
+      <ai-panel :list="cardlist1" liststyle="card"></ai-panel>
       
       <ai-panel :list="cardlist2" liststyle="card"></ai-panel>
       
@@ -82,18 +93,15 @@ export default {
       badgelist:[
         {
           item:"List Item 1",
-          lefticon:"lefticon",
-          icon:"badge"
+          href:"/",
         },
         {
           item:"List Item 1",
-          lefticon:"lefticon",
           href:"/",
           time:"2016.03"
         },
         {
           item:"List Item 1",
-          lefticon:"lefticon",
           icon:"badge",
           href:"/"
         },
@@ -110,14 +118,14 @@ export default {
           subtitle:"发行公司：滚石唱片",
           text:"别问我风从哪里吹来别问我风明天是爱还是不爱一往情深也许最后带来是伤害别问我花猫是黑还是白别问我还欠下",
           time:"2016.03",
-          icon:"righticon"
+          href:"/"
         },
         {
           title:"表单面板",
           subtitle:"发行公司：滚石唱片",
           text:"别问我风从哪里吹来别问我风明天是爱还是不爱一往情深也许最后带来是伤害别问我花猫是黑还是白别问我还欠下",
           time:"2016.03",
-          icon:"righticon"
+          href:"/"
         },
       ],
       imglist:[
@@ -132,7 +140,7 @@ export default {
           title:"第一张精选",
           subtitle:"发行公司：滚石唱片",
           time:"2016-03",
-          icon:"righticon"
+          href:"/"
         },
         
       ],
@@ -143,7 +151,7 @@ export default {
           subtitle:"发行公司：滚石唱片",
           text:"别问我风从哪里吹来别问我风明天是爱还是不爱一往情深也许最后带来是伤害别问我",
           time:"2016-03",
-          icon:"righticon"
+          href:"/"
         }
       ],
       cardlist1:[
@@ -180,21 +188,21 @@ export default {
           title:"第一张精选",
           subtitle:"发行公司：滚石唱片",
           time:"2016-03",
-          icon:"righticon"
+          href:"/"
         },
         {
           src:"img",
           title:"第一张精选",
           subtitle:"发行公司：滚石唱片",
           time:"2016-03",
-          icon:"righticon"
+          href:"/"
         },
         {
           src:"img",
           title:"第一张精选",
           subtitle:"发行公司：滚石唱片",
           time:"2016-03",
-          icon:"righticon"
+          href:"/"
         },
       ],
 
@@ -206,7 +214,6 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="less">
-  .ai-list{
-      margin-bottom: 178/75*1rem;
-  }
+@import "../assets/less/list.less";
+
 </style>

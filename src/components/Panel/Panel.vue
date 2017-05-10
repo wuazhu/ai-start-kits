@@ -1,8 +1,6 @@
 <template>
   <div class="panel">
-      <div class="list-hd">
-		    <p class="hd">{{header}}</p>
-      </div> 
+      
       <!--带有超链接-->
       <!-- <template v-if="type==='list'">
         <a href="#" v-for="x in hreflist">
@@ -18,8 +16,8 @@
       </template> -->
       
       <template v-if="type==='list'">
-        <div :class="['list-bd',liststyle]" v-for="x in list">
-          <i :class="[x.lefticon]"></i>
+        <div :class="['list-bd',liststyle]" v-for="x in list" @click="goHref(x.href)">
+          <i :class="[x.lefticon]" v-if="x.lefticon"></i>
           <p class="list-item">{{x.item}}</p>
           <div class="right">  
             <i class="righticon" v-if="x.href"></i>
@@ -32,12 +30,13 @@
       </template>
       <!--文字列表####图文列表####内嵌式####card-->
       <template v-if="type==='textlist'" v-for="x in list">
-        <div :class="['text-list-bd',liststyle]">
+        <div :class="['text-list-bd',liststyle]" @click="goHref(x.href)">
           <img 
             :src="getSrc(x.src)" v-if="x.src" 
             :class="[x.text?'list-img':'']" 
             alt="" >
           <div class="right" v-if="x.icon || x.time">
+            <i class="righticon" v-if="x.href"></i>
             <i :class="[x.icon]"></i>
             <p v-if="x.time">{{x.time}}</p>
           </div>
@@ -97,6 +96,14 @@ export default {
   methods:{
    getSrc(img) {
       return require(`../../assets/img/list/${img}.png`);
+    },
+    goHref(href,$router){
+      if(href){
+        this.$router.push(href);
+      }
+      else{
+        return false;
+      }
     }
   }
 }

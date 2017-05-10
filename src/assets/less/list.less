@@ -1,0 +1,35 @@
+@import "./main.less";
+
+.ai-list{
+      margin-bottom: 178/75*1rem;
+  }
+  @listwidth:100%;
+
+  @leftpadding:31 / 75 * 1rem;
+  @rightpadding:31 / 75 * 1rem;
+  @itemheight:86/75*1rem;
+  @itemsize:32;
+  @bdbgcolor:#fff;
+  @hdcolor:#4e4e4e;
+  @itemcolor:#202020;
+  @bordercolor:#dbdbde;
+  @hdsize:26;
+  @hdbgcolor:#efeff4;
+  @hdheight:60/75*1rem;
+  .setboxstyle(@Height,@Bgcolor){
+    margin: 0;
+    padding: 0 @rightpadding 0 @leftpadding;
+    width: auto;
+    height: @Height;
+    line-height: @Height;
+    background-color: @Bgcolor;
+    border: 1/75*1rem solid;
+    border-color: @bordercolor transparent;
+    overflow: hidden;
+  }
+  h3{
+   .setboxstyle(@hdheight,@hdbgcolor);
+    .fs(@hdsize);
+     color: @hdcolor;
+     font-family: "微软雅黑";
+  }
