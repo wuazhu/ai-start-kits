@@ -1,6 +1,12 @@
 <template>
     <div class="index">
+      <div>
+        <goback></goback>
+      </div>
       <div class="form">
+        <div class="search-input">
+          <!-- <ai-search></ai-search> -->
+        </div>
         <div>
           <h2 class="form-title">表单</h2>
         </div>
@@ -9,33 +15,27 @@
         <form method="post"action="login.php" class="content">
           <fieldset>
             <div class="input-border">
-              <ai-label>qq:</ai-label>
-              <ai-input type="text"name="qq"placeholder="请输入qq号"required="required" />
+              <ai-input type="text"name="qq"placeholder="请输入qq号"required="required" :label="qq"/>
             </div>
             <div class="input-border">
-              <ai-label><nobr>手机号:</nobr></ai-label>
-              <ai-input type="text"name="mobile"placeholder="请输入手机号"required="required" :default-value="null" :temp="temp1" v-on:receive='fn' v-model='temp1' />
+              <ai-input type="text"name="mobile"placeholder="请输入手机号"required="required" :default-value="null" :temp="temp1" v-on:receive='fn' v-model='temp1' :label="mobile"/>
               <ai-button btn-content='获取验证码' class='num-btn'></ai-button>
             </div>
             <div class="input-border">
-              <ai-label><nobr>手机号:</nobr></ai-label>
-              <ai-input type="text"name="mobile"placeholder="请输入手机号"required="required" :default-value="null" :temp="temp1" v-on:receive='fn' v-model='temp1' />
+              <ai-input type="text"name="mobile"placeholder="请输入手机号"required="required" :default-value="null" :temp="temp1" v-on:receive='fn' v-model='temp1' :label="code"/>
               <ai-button btn-content='45s' class='num-btn' disabled></ai-button>
             </div>
           </fieldset>
           <fieldset>
             <div class="input-border">
-              <label class="title">qq:</label>
-              <input type="text"name="qq"placeholder="请输入qq号"required="required" />
+              <ai-input type="text"name="qq"placeholder="请输入qq号"required="required" :label='qq'/>
             </div>
             <div class="input-border">
-              <label class="title"><nobr>验证码:</nobr></label>
-              <input type="text"name="mobile"placeholder="请输入验证码"required="required" />
+              <ai-input type="text"name="mobile"placeholder="请输入验证码"required="required" :label="code"/>
               <img src="../../src/assets/img/form/num_img.png" alt="验证码" class="num_img">
             </div>
             <div class="input-border">
-              <label class="title"><nobr>银行卡:</nobr></label>
-              <input type="text"name="card" placeholder="请输入银行卡号"required="required" />
+              <ai-input type="text"name="card" placeholder="请输入银行卡号"required="required" :label='bank'/>
             </div>
           </fieldset>
         </form>
@@ -54,22 +54,19 @@
           <form method="post"action="login.php" class="content">
             <fieldset>
               <div class="input-border">
-                <label class="title">qq:</label>
-                <input type="text"name="qq"placeholder="请输入qq号"required="required" />
+                <ai-input type="text"name="qq"placeholder="请输入qq号"required="required" :label="qq"/>
                 <!-- <img src="../../assets/img/form/shutdown.png" alt="关闭" class="shutdown"> -->
               <!--   <img src="../../assets/shut.png" alt="叉子" class="shut"> -->
             </div>
               <div class="input-border">
-                <label class="title"><nobr>验证码:</nobr></label>
-                <input type="text"name="mobile"placeholder="请输入验证码"required="required"/>
+                <ai-input type="text"name="mobile"placeholder="请输入验证码"required="required" :label="code"/>
                 <img src="../../src/assets/img/form/num_img.png" alt="验证码" class="num_img">
               </div>
               <div class="input-border">
-                <label class="title"><nobr>银行卡:</nobr></label>
-                <input type="text"name="card" placeholder="请输入银行卡号"required="required" />
+                <ai-input type="text"name="card" placeholder="请输入银行卡号"required="required" :label="bank"/>
               </div>
               <div class="input-border">
-                <label class="title"><nobr>设置:</nobr></label>
+                <label class="set">设置:</label>
                 <ai-switch class='switch' ></ai-switch>
               </div>
             </fieldset>
@@ -93,38 +90,38 @@
 body{
   background-color: #F6F6F6;
 }
-form label{
-  display:inline-block;
-  .width(75);
-  text-align:left;
-}
-form fieldset{
-  border:0;
-  align:left;
-  padding: 0;
-  p{
-    .mb(0);
-    .mt(0);
-    text-align: left;
-  }
-}
+// form label{
+//   display:inline-block;
+//   .width(75);
+//   text-align:left;
+// }
+// form fieldset{
+//   border:0;
+//   align:left;
+//   padding: 0;
+//   p{
+//     .mb(0);
+//     .mt(0);
+//     text-align: left;
+//   }
+// }
 #app{
   background-color: #F6F6F6;
 }
 .index{
   .fs(30);
 }
-.title{//input名称
-  .width(28);
-  // .height(90);
-  .fs(32);
-  .ml(32);
-  .pt(24);
-  .pb(24);
-  font-family: "Heiti SC";
-  color: rgb(0, 0, 0);
-  display:inline-block;
-}
+// .title{//input名称
+//   .width(28);
+//   // .height(90);
+//   .fs(32);
+//   .ml(32);
+//   .pt(24);
+//   .pb(24);
+//   font-family: "Heiti SC";
+//   color: rgb(0, 0, 0);
+//   display:inline-block;
+// }
 .input-content{//输入框
   .height(90);
 }
@@ -198,6 +195,15 @@ form fieldset{
 .switch{
   top:30px;
 }
+.set{
+  height: 77.8px;
+  line-height: 77.8px;
+  margin-left: 32px;
+  text-align: left;
+  font-size: 30px;
+  font-family: "Heiti SC";
+  display: inline;
+}
 /*警告框样式*/
 // .worning{
 //   .width(750);
@@ -206,17 +212,23 @@ form fieldset{
 // }
 </style>
 <script>
-import AiLabel from "../components/Form/AiLabel.vue";
-import AiInput from "../components/Form/AiInput.vue";
-import AiButton  from "../components/Form/AiButton.vue";
+import AiLabel from "../components/Form/AiLabel";
+import AiInput from "../components/Form/AiInput";
+import AiButton  from "../components/Form/AiButton";
 import AiAlert from "../components/Form/AiAlert";
 import AiSwitch from "../components/Form/AiSwitch";
+import AiSearch from "../components/Form/AiSearch";
+import goback from "../components/goback"
   export default {
     data() {
       return {
         edit: '这是父组件的数据edit',
         temp1: 1,
-        temp: false//测试值
+        temp: false,//测试值
+        qq: '' ,//qq
+        mobile: '',//手机号
+        code: '',//验证码
+        bank: ''//银行卡
       }
     },
     methods:{
@@ -226,11 +238,29 @@ import AiSwitch from "../components/Form/AiSwitch";
       }
     },
     components:{
+      goback,
       AiLabel,
       AiInput,
       AiButton,
       AiAlert,
-      AiSwitch
+      AiSwitch,
+      AiSearch
+    },
+    created(){
+      this.$http.get('/api/getInputs')
+     .then( (res) => {
+       // console.log(res)
+       // res.bodyText=res.toString();
+       // console.log(typeof(res.bodyText));
+       // console.log(JSON.parse(res.bodyText))
+       res.bodyText=JSON.parse(res.bodyText)
+       this.qq=res.bodyText.qq;
+       this.mobile=res.bodyText.mobile;
+       this.code=res.bodyText.code;
+       this.bank=res.bodyText.bank;
+     }, (err) => {
+       console.log(err)
+     })
     }
   }
 </script>

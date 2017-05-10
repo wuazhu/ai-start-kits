@@ -1,12 +1,21 @@
-@fs: 32;
-input{
-  font-size: @fs/75* 1rem;
+@fs: 32/75*1rem;
+.input{
+  font-size: @fs;
   border: none;
   outline: none;
   overflow: hidden;
+  height: 30px;
+  line-height: 30px;
+  // padding-top: 19px;
+  //  padding-bottom: 24px;
+  // display: inline-block;;
 }
 .input-span{
+  height: 77.8px;
+  line-height: 77.8px;
+  margin-left: 32px;
   text-align: left;
-  font-size: @fs/75 * 1rem;
+  font-size: @fs;
   font-family: "Heiti SC";
+  display: inline;
 }

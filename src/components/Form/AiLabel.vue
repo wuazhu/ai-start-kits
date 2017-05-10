@@ -1,8 +1,8 @@
 <template >
-  <label :class="cssTitle">
+  <!-- <label :class="cssTitle">
     <slot>
     </slot>
-  </label>
+  </label> -->
 </template>
 
 <script>
@@ -18,5 +18,5 @@ export default {
 </script>
 
 <style lang="less" scope>
-@import "../../assets/less/Label.less";
+// @import "../../assets/less/Label.less";
 </style>

@@ -46,5 +46,11 @@
       "src": "http://img.mukewang.com/5903665f00011baa12000460.jpg",
       "url": "http://imooc.com"
     }
-  ]
+  ],
+  "getInputs":{
+    "qq":"qq:",
+    "mobile":"手机号:",
+    "code":"验证码:",
+    "bank":"银行卡:"
+  }
 }

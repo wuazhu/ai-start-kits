@@ -1,5 +1,5 @@
 <template>
-  <button :disabled="disabled" class="ai-button"
+  <button :disabled="disabled" class="ai-button-form"
     @click="submit(btnContent)"
     :autofocus="autofocus"
     :type="nativeType"
@@ -13,7 +13,7 @@
       }
     ]"
   >
-  <nobr>{{btnContent}}</nobr>
+  {{btnContent}}
 
   </button>
 </template>

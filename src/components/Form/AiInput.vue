@@ -1,21 +1,26 @@
 <template>
   <!-- <input :type="type" :name="name" :value="value" :placeholder='placeholder' > -->
-  <span class="input-span">
+  <div class="input-span">
+    <label :class="cssTitle">
+      <slot>
+        {{label}}
+      </slot>
+    </label>
     <input :type="type"
           :name="name"
           :value="defaultValue"
           :placeholder="placeholder"
           @blur='isfn'
+          class='input'
           >
           <!-- {{template2} -->
     <span v-show="isinput">输入内容不能为空</span>
-  </span>
+  </div>
 </template>
-import
 <script>
 export default {
   name:'input',
-  props:["defaultValue",'edit','temp'],//defaultValue为默认的初始值
+  props:["defaultValue","label",'edit','temp'],//defaultValue为默认的初始值
   data(){
     return{
       type:'text',//默认text类型
@@ -23,7 +28,8 @@ export default {
       value:'',//设置value属性 defaultValue为默认初始值
       placeholder:'请输入内容',//设置placeholder属性
       isinput:false,
-      template:''
+      template:'',
+      cssTitle:'title'//默认css样式
     }
   },
   methods:{
@@ -65,4 +71,5 @@ input{
 <!-- </style> -->
 <style lang='less' scope>
   @import "../../assets/less/Input";
+  @import "../../assets/less/Label.less";
 </style>
