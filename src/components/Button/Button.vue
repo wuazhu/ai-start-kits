@@ -13,5 +13,5 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style lang="less">
 // less配置文件
-@import '../../assets/less/button.less';
+@import '../../assets/less/button1.less';
 </style>
