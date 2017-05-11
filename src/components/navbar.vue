@@ -1,8 +1,20 @@
 <template>
   <nav class="footer">
-    <router-link exact class="nav" v-for="(item, index) in navItem" :to="item.path" key="index" active-class="active">
-      <i class="icon" :class="item.icon"></i>
-      <span class="nav-text">{{ item.text }}</span>
+    <router-link exact class="nav" active-class="active" to="/">
+      <i class="icon icon-home"></i>
+      <span class="nav-text">首页</span>
+    </router-link>
+    <router-link class="nav" active-class="active" to="uis">
+      <i class="icon icon-uis"></i>
+      <span class="nav-text">UI组件</span>
+    </router-link>
+    <router-link class="nav" active-class="active" to="js">
+      <i class="icon icon-js"></i>
+      <span class="nav-text">JS组件</span>
+    </router-link>
+    <router-link class="nav" active-class="active" to="more">
+      <i class="icon icon-more"></i>
+      <span class="nav-text">更多</span>
     </router-link>
   </nav>
 </template>
@@ -10,7 +22,6 @@
 @import '../assets/less/config.less';
   body{
     background: #f6f6f6;
-    margin: 0 auto;
   }
   .footer{
     position: fixed;

@@ -1,11 +1,19 @@
 <template>
-  <div class="goback"><span @click="goback"><i class="iconfot icon-prev-page"></i>返 回</span></div>
+  <div class="goback"><span @click="goback"><i class="iconfot icon-prev-page"></i>← 返 回</span></div>
 </template>
-<style scope>
+<style scope lang="less">
+@import '../assets/less/config.less';
   .goback{
-    height:80px;
-    line-height: 80px;
-    color: #42b983;
+    .height(88);
+    .lh(88);
+    color: @green;
+    .fs30;
+    border-bottom:1px solid @gray!important;
+    background: #fff!important;
+    padding: 0 20px!important;
+    position: fixed;
+    top: 0;left: 0;right: 0;
+    z-index: 3;
   }
 </style>
 <script>

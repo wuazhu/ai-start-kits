@@ -36,12 +36,12 @@ export default new Router({
       component: Form
     },
     {
-      path: '/buttons',
-      component: Button
-    },
-    {
       path: '/cards',
       component: Cards
+    },
+    {
+      path: '/uis/buttons',
+      component: Button
     }
   ]
 })

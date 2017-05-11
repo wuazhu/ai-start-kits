@@ -42,7 +42,7 @@
 // less配置文件
 @import '../assets/less/config.less';
 body{
-  padding-bottom: 99px!important;
+  .pb(99)!important;
 
 }
 .app-view {

@@ -1,3 +1,74 @@
+// 字体
+.fs34{
+  font-size: 15px;
+  [data-dpr="2"] & {
+    font-size: 34px;
+  }
+  [data-dpr="3"] & {
+    font-size: 58px;
+  }
+}
+.fs32{
+  font-size: 14px;
+  [data-dpr="2"] & {
+    font-size: 32px;
+  }
+  [data-dpr="3"] & {
+    font-size: 54px;
+  }
+}
+.fs30{
+  font-size: 13px;
+  [data-dpr="2"] & {
+    font-size: 30px;
+  }
+  [data-dpr="3"] & {
+    font-size: 52px;
+  }
+}
+.fs28{
+  font-size: 12px;
+  [data-dpr="2"] & {
+    font-size: 28px;
+  }
+  [data-dpr="3"] & {
+    font-size: 48px;
+  }
+}
+.fs26{
+  font-size: 11px;
+  [data-dpr="2"] & {
+    font-size: 26px;
+  }
+  [data-dpr="3"] & {
+    font-size: 44px;
+  }
+}
+.fs24{
+  font-size: 10px;
+  [data-dpr="2"] & {
+    font-size: 24px;
+  }
+  [data-dpr="3"] & {
+    font-size: 42px;
+  }
+}
+.fs42{
+  font-size: 18px;
+  [data-dpr="2"] & {
+    font-size: 42px;
+  }
+  [data-dpr="3"] & {
+    font-size: 72px;
+  }
+}
+//基础颜色
+@black: #000;
+@dark-gray: #707070;
+@gray: #afafaf;
+@blue: #419df5;
+@red: #ff0000;
+@green: #42b983;
 .fs(@px){
     font-size: round(@px / 1.8) * 1px;
     [data-dpr="2"] & {
@@ -18,6 +89,10 @@
     [data-dpr="4"] & {
         font-size: @px * 2px;
     }
+}
+
+.iconfont{
+  .fs(50);
 }
 .flex{
     display: -webkit-box;

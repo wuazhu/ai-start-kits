@@ -8,10 +8,6 @@
     <ai-nav></ai-nav>
   </div>
 </template>
-<style lang="less">
-
-
-</style>
 <script>
 import AiNav from './components/navbar'
   export default {
@@ -22,11 +18,16 @@ import AiNav from './components/navbar'
     },
     watch: {
       '$route' (to, from) {
-        const toDepth = to.path.split('/').length
-        // console.log('to:',to,toDepth)
-        const fromDepth = from.path.split('/').length
-        // console.log('from:',from,fromDepth)
-        this.transitionName = toDepth < fromDepth ? 'slide-right' : 'slide-left'
+        if(to.path === '/'){
+          this.transitionName = 'slide-right'
+        }else{
+          const toDepth = to.path.split('/').length
+          // console.log('to:',to,toDepth)
+          const fromDepth = from.path.split('/').length
+          // console.log('from:',from,fromDepth)
+          this.transitionName = toDepth < fromDepth ? 'slide-right' : 'slide-left'
+        }
+
       }
     },
     components: {
