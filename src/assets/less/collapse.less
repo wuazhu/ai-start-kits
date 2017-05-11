@@ -1,0 +1,54 @@
+@import './main.less';
+
+@ttheight:90;
+@ttfs:30;
+@ttpd:32;
+
+/*清除浮动*/
+  .clearfix{
+    zoom:1;
+    &:after{
+      clear:both;   
+      overflow:hidden; 
+      content:"";   
+      display:table; 
+    }
+  }
+  .collapse{
+  	.pl(@ttpd);
+  	.clearfix;
+  	background-color: #fff;
+  	border:1/75*1rem solid;
+    border-color: #dbdbde transparent;
+    background-color: #fff;
+  }
+
+  .header{
+	.width(750-64);
+	.height(@ttheight);
+	line-height: @ttheight/75*1rem;
+  	.pr(@ttpd);
+  	h3{
+  		width: auto;
+  		.fs(@ttfs);
+  		font-family: "STHeitiSC";
+  	}
+  	.icon{
+  		position: relative;
+  		float: right;
+  	}
+  }
+  
+  .content{
+	.pr(70);
+	.fs(30);
+  	font-family: "STHeitiSC";
+ 	color: rgb( 97, 97, 97 );
+  	line-height: 1.6;
+  	p{
+  		display: inline-block;
+  		.pb(25);
+  	}
+  }
+
+ 

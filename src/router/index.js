@@ -11,6 +11,7 @@ import List from '../pages/List'
 import Form from '../pages/Form'
 import Button from '../pages/buttons'
 import Cards from '../pages/cards'
+import Accordions from '../pages/Accordions'
 
 export default new Router({
   mode: 'history',
@@ -40,8 +41,13 @@ export default new Router({
       component: Cards
     },
     {
+      path: '/accordions',
+      component: Accordions
+    },
+    {
       path: '/uis/buttons',
       component: Button
-    }
+    },
+
   ]
 })
