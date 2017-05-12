@@ -47,7 +47,7 @@
         .width(40);
         .height(40);
         margin: 0 auto;
-        &.icon-home{
+        &.icon-index{
           background: url('../assets/img/index/home@3x.png') center;
           background-size: 100% auto;
         }

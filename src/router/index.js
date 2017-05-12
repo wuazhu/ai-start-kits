@@ -3,16 +3,36 @@ import Router from 'vue-router'
 
 Vue.use(Router)
 
-//页面路由
+// nav pages
 import Index from '../pages/Index'
 import Uis from '../pages/Uis'
-import Charts  from '../pages/Charts'
-import List from '../pages/List'
-import Form from '../pages/Form'
-import Button from '../pages/buttons'
-import Cards from '../pages/cards'
 import Jspage from '../pages/jspage'
-import Accordions from '../pages/Accordions'
+import More from '../pages/more'
+// uipages
+import Button from '../pages/ui/button'
+import Form from '../pages/ui/form'
+import List from '../pages/ui/list'
+import Search from '../pages/ui/search'
+import Radio from '../pages/ui/radio'
+import Badge from '../pages/ui/badge'
+import Card from '../pages/ui/card'
+import Accordions from '../pages/ui/accordion'
+import Progress from '../pages/ui/progress'
+import Tabbar from '../pages/ui/tabbar'
+import Counter from '../pages/ui/counter'
+import Feedback from '../pages/ui/feedback'
+import Stepbar from '../pages/ui/stepbar'
+import Timeline from '../pages/ui/timeline'
+// jspages
+import Dialog from '../pages/js/dialog'
+import Actionsheet from '../pages/js/actionsheet'
+import Chart from '../pages/js/chart'
+import IndexList from '../pages/js/indexList'
+import Loading from '../pages/js/loading'
+import Picker from '../pages/js/picker'
+import Popover from '../pages/js/popover'
+import Slider from '../pages/js/slider'
+import Toast from '../pages/js/toast'
 
 export default new Router({
   mode: 'history',
@@ -33,14 +53,15 @@ export default new Router({
       component: Jspage
     },
     {
-      name: 'CHARTS',
-      path: '/uis/charts',
-      component: Charts
+      name: 'MORE',
+      path: '/more',
+      component: More
     },
+    // pages
     {
-      name: 'LIST',
-      path: '/uis/list',
-      component: List
+      name: 'BUTTON',
+      path: '/uis/button',
+      component: Button
     },
     {
       name: 'FORM',
@@ -48,20 +69,110 @@ export default new Router({
       component: Form
     },
     {
-      name: 'CARDS',
-      path: '/uis/cards',
-      component: Cards
+      name: 'LIST',
+      path: '/uis/list',
+      component: List
     },
     {
-      name: 'ACCORDIONS',
-      path: '/uis/accordions',
+      name: 'SEARCH',
+      path: '/uis/search',
+      component: Search
+    },
+    {
+      name: 'RADIO',
+      path: '/uis/radio',
+      component: Radio
+    },
+    {
+      name: 'BADGE',
+      path: '/uis/badge',
+      component: Badge
+    },
+    {
+      name: 'CARD',
+      path: '/uis/card',
+      component: Card
+    },
+    {
+      name: 'ACCORDION',
+      path: '/uis/accordion',
       component: Accordions
     },
     {
-      name: 'BUTTON',
-      path: '/uis/buttons',
-      component: Button
+      name: 'PROGRESS',
+      path: '/uis/progress',
+      component: Progress
     },
-
+    {
+      name: 'TABBAR',
+      path: '/uis/tabbar',
+      component: Tabbar
+    },
+    {
+      name: 'COUNTER',
+      path: '/uis/counter',
+      component: Counter
+    },
+    {
+      name: 'FEEDBACK',
+      path: '/uis/feedback',
+      component: Feedback
+    },
+    {
+      name: 'STEPBAR',
+      path: '/uis/stepbar',
+      component: Stepbar
+    },
+    {
+      name: 'TIMELINE',
+      path: '/uis/timeline',
+      component: Timeline
+    },
+    // jspages
+    {
+      name: 'DIALOG',
+      path: '/js/dialog',
+      component: Dialog
+    },
+    {
+      name: 'TOAST',
+      path: '/js/toast',
+      component: Toast
+    },
+    {
+      name: 'INDEXLIST',
+      path: '/js/indexlist',
+      component: IndexList
+    },
+    {
+      name: 'PICKER',
+      path: '/js/picker',
+      component: Picker
+    },
+    {
+      name: 'SLIDER',
+      path: '/js/slider',
+      component: Slider
+    },
+    {
+      name: 'POPOVER',
+      path: '/js/popover',
+      component: Popover
+    },
+    {
+      name: 'ACTIONSHEET',
+      path: '/js/actionsheet',
+      component: Actionsheet
+    },
+    {
+      name: 'LOADING',
+      path: '/js/loading',
+      component: Loading
+    },
+    {
+      name: 'CHART',
+      path: '/js/chart',
+      component: Chart
+    }
   ]
 })

@@ -1,7 +1,7 @@
 <template>
   <div class="uis">
     <goback></goback>
-    <router-link to="/uis/buttons" class="uislink"><i class="icon icon-button"></i>Button 按钮</router-link>
+    <router-link to="/uis/button" class="uislink"><i class="icon icon-button"></i>Button 按钮</router-link>
     <router-link to="/uis/form" class="uislink"><i class="icon icon-form"></i>Form 表单</router-link>
     <router-link to="/uis/list" class="uislink"><i class="icon icon-list"></i>List 列表</router-link>
     <router-link to="/uis/list" class="uislink"><i class="icon icon-search"></i>Search 搜索</router-link>
@@ -10,7 +10,7 @@
     <router-link to="/uis/cards" class="uislink"><i class="icon icon-card"></i>Card 卡片</router-link>
     <router-link to="/uis/accordion" class="uislink"><i class="icon icon-accordion"></i>Accordion 折叠面板</router-link>
     <router-link to="/uis/progress" class="uislink"><i class="icon icon-progress"></i>Progress Bar 进度条</router-link>
-    <router-link to="/uis/tabs" class="uislink"><i class="icon icon-tab"></i>Tab bar 选项卡</router-link>
+    <router-link to="/uis/tabbar" class="uislink"><i class="icon icon-tab"></i>Tab bar 选项卡</router-link>
     <router-link to="/uis/counter" class="uislink"><i class="icon icon-counter"></i>Counter 计数器</router-link>
     <router-link to="/uis/feedback" class="uislink"><i class="icon icon-feedback"></i>Feedback 操作反馈</router-link>
     <router-link to="/uis/stepbar" class="uislink"><i class="icon icon-step"></i>stepbar 步骤条</router-link>
@@ -21,10 +21,14 @@
 @import '../assets/less/config.less';
   .uis{
     .pt(88);
+    .pb(110);
     .width(750);
+    .mb(20)!important;
+    background: #f6f6f6;
     .uislink{
       display: block;
-      .lh(70);
+      .height(100);
+      .lh(90);
       color: @dark-gray;
       .fs28;
       text-decoration: none;
@@ -35,15 +39,72 @@
         margin-top: 20px;
         border-top:1px solid #ddd;
       }
+      box-sizing: border-box;
     }
     .icon{
       float: left;
-      background: #f3f3f3;
-      .mt(10);
+      // background: #f3f3f3;
+      .mt(20);
       .mr(15);
       .width(50);
       .height(50);
     }
+  }
+  .icon-button{
+    background: url('../assets/img/icons/button@3x.png') no-repeat center;
+    background-size: 80% auto;
+  }
+  .icon-form{
+    background: url('../assets/img/icons/form@3x.png') no-repeat center;
+    background-size: 80% auto;
+  }
+  .icon-list{
+    background: url('../assets/img/icons/list@3x.png') no-repeat center;
+    background-size: 80% auto;
+  }
+  .icon-search{
+    background: url('../assets/img/icons/search@3x.png') no-repeat center;
+    background-size: 80% auto;
+  }
+  .icon-radio{
+    background: url('../assets/img/icons/radio@3x.png') no-repeat center;
+    background-size: 80% auto;
+  }
+  .icon-badge{
+    background: url('../assets/img/icons/badge@3x.png') no-repeat center;
+    background-size: 80% auto;
+  }
+  .icon-card{
+    background: url('../assets/img/icons/card@3x.png') no-repeat center;
+    background-size: 80% auto;
+  }
+  .icon-accordion{
+    background: url('../assets/img/icons/accordion@3x.png') no-repeat center;
+    background-size: 80% auto;
+  }
+  .icon-progress{
+    background: url('../assets/img/icons/progress-bar@3x.png') no-repeat center;
+    background-size: 80% auto;
+  }
+  .icon-tab{
+    background: url('../assets/img/icons/tab-bar@3x.png') no-repeat center;
+    background-size: 80% auto;
+  }
+  .icon-counter{
+    background: url('../assets/img/icons/counter@3x.png') no-repeat center;
+    background-size: 80% auto;
+  }
+  .icon-feedback{
+    background: url('../assets/img/icons/feedback@3x.png') no-repeat center;
+    background-size: 80% auto;
+  }
+  .icon-step{
+    background: url('../assets/img/icons/stepbar@3x.png') no-repeat center;
+    background-size: 80% auto;
+  }
+  .icon-timeline{
+    background: url('../assets/img/icons/timeline@3x.png') no-repeat center;
+    background-size: 80% auto;
   }
 </style>
 <script>
