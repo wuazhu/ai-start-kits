@@ -1,7 +1,7 @@
 # asiainfo-start-kit
 
 开发公约:
-1. 组件名称都以大写字母开头
+1. 组件名称都以大写字母开头n
 2. 为区分组件与自带组件区别,所有组件都以 Ai开头 eg: AiDialog.vue
 3. 引入时: import AiDialog from './components/AiDialog'
 4. 使用时: <ai-dialog></ai-dialog>
@@ -56,5 +56,3 @@ npm run build
 # build for production and view the bundle analyzer report
 npm run build --report
 ```
-
-
