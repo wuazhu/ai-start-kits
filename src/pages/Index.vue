@@ -2,27 +2,27 @@
     <div class="index">
       <img src="../assets/img/index/2.jpg" class="index-banner" alt="">
       <div class="components">
-        <router-link to="/buttons">
+        <router-link to="/uis/buttons">
           <img src="../assets/img/index/button_icon@3x.png" alt="">
           <span>按钮</span>
         </router-link>
-        <router-link to="/tilps">
+        <router-link to="/js/tilps">
           <img src="../assets/img/index/hint_icon@3x.png" alt="">
           <span>提示</span>
         </router-link>
-        <router-link to="/dialog">
+        <router-link to="/js/dialog">
           <img src="../assets/img/index/pop_icon@3x.png" alt="">
           <span>弹窗</span>
         </router-link>
-        <router-link to="/list">
+        <router-link to="/uis/list">
           <img src="../assets/img/index/list_icon@3x.png" alt="">
           <span>列表</span>
         </router-link>
-        <router-link to="/form">
+        <router-link to="/uis/form">
           <img src="../assets/img/index/form_icon@3x.png" alt="">
           <span>表单</span>
         </router-link>
-        <router-link to="charts">
+        <router-link to="/uis/charts">
           <img src="../assets/img/index/chart_icon@3x.png" alt="">
           <span>图表</span>
         </router-link>

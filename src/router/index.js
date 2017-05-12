@@ -11,35 +11,48 @@ import List from '../pages/List'
 import Form from '../pages/Form'
 import Button from '../pages/buttons'
 import Cards from '../pages/cards'
+import Jspage from '../pages/jspage'
 
 export default new Router({
   mode: 'history',
   routes: [
     {
+      name: 'INDEX',
       path: '/',
       component: Index
     },
     {
+      name: 'UIS',
       path: '/uis',
       component: Uis
     },
     {
-      path: '/charts',
+      name: 'JS',
+      path: '/js',
+      component: Jspage
+    },
+    {
+      name: 'CHARTS',
+      path: '/uis/charts',
       component: Charts
     },
     {
-      path: '/list',
+      name: 'LIST',
+      path: '/uis/list',
       component: List
     },
     {
-      path: '/form',
+      name: 'FORM',
+      path: '/uis/form',
       component: Form
     },
     {
-      path: '/cards',
+      name: 'CARDS',
+      path: '/uis/cards',
       component: Cards
     },
     {
+      name: 'BUTTON',
       path: '/uis/buttons',
       component: Button
     }

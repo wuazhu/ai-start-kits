@@ -1,18 +1,18 @@
 <template>
   <nav class="footer">
     <router-link exact class="nav" active-class="active" to="/">
-      <i class="icon icon-home"></i>
+      <i class="icon icon-index"></i>
       <span class="nav-text">首页</span>
     </router-link>
-    <router-link class="nav" active-class="active" to="uis">
+    <router-link class="nav" active-class="active"  to="/uis">
       <i class="icon icon-uis"></i>
       <span class="nav-text">UI组件</span>
     </router-link>
-    <router-link class="nav" active-class="active" to="js">
+    <router-link class="nav" active-class="active" to="/js">
       <i class="icon icon-js"></i>
       <span class="nav-text">JS组件</span>
     </router-link>
-    <router-link class="nav" active-class="active" to="more">
+    <router-link class="nav" active-class="active" to="/more">
       <i class="icon icon-more"></i>
       <span class="nav-text">更多</span>
     </router-link>
@@ -66,7 +66,7 @@
       }
       &.active{
         color: #419df5;
-        .icon-home{
+        .icon-index{
           background: url('../assets/img/index/home_active@3x.png') center;
           background-size: 100% auto;
         }
@@ -96,28 +96,7 @@
 export default {
   data() {
     return {
-      navItem: [
-        {
-          path: '/',
-          text: '首页',
-          icon: 'icon-home'
-        },
-        {
-          path: '/uis',
-          text: 'UI组件',
-          icon: 'icon-uis'
-        },
-        {
-          path: '/js',
-          text: 'JS组件',
-          icon: 'icon-js'
-        },
-        {
-          path: '/more',
-          text: '更多',
-          icon: 'icon-more'
-        },
-      ]
+      isActive: false
     }
   }
 }

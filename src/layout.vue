@@ -30,6 +30,9 @@ import AiNav from './components/navbar'
 
       }
     },
+    created(){
+
+    },
     components: {
       AiNav,
     }
