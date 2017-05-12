@@ -24,7 +24,8 @@
             <p v-if="x.note">{{x.note}}</p>
             <p v-if="x.time">{{x.time}}</p>
             <i :class="[x.icon]" v-if="x.icon"></i>
-            <img src="../../assets/img/list/switch.png" class="switch" alt="" v-if="x.button">
+            <ai-switch class="switch" v-if="x.button"></ai-switch>
+            <!-- <img src="../../assets/img/list/switch.png" class="switch" alt="" v-if="x.button"> -->
           </div>
         </div>
       </template>
@@ -56,6 +57,8 @@
 </template>
 
 <script>
+import AiSwitch from '../Form/AiSwitch';
+
 export default {
   name: 'Panel',
   data() {
@@ -64,7 +67,7 @@ export default {
       baseUrl:"/static/img/"
     }
   },
-
+  components:{ AiSwitch },
   props:{
   	type:{
   		type: String,
