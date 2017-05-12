@@ -52,5 +52,185 @@
     "mobile":"手机号:",
     "code":"验证码:",
     "bank":"银行卡:"
-  }
+  },
+  "getAllLists":{
+    "list":[
+      {
+        "item":"List Item 1"
+      },
+      {
+        "item":"List Item 2"
+      }
+    ],
+    "hreflists":[
+      {
+        "item":"List Item 1",
+        "href":"/"
+      },
+      {
+        "item":"List Item 2",
+        "href":"/",
+        "time":"2016.03"
+      }
+    ],
+    "notelist":[
+      {
+        "item":"List Item 1",
+        "note":"After"
+      },
+      {
+        "item":"List Item 2",
+        "note":"After"
+      },
+      {
+        "item":"List Item 3",
+        "note":"After"
+      }
+    ],
+    "cornerlist":[
+      {
+        "item":"List Item 7",
+        "icon":"badge"
+      },
+      {
+        "item":"List Item 8",
+        "button":"switch"
+      }
+    ],
+    "badgelist":[
+      {
+        "item":"List Item 1",
+        "href":"/"
+      },
+      {
+        "item":"List Item 1",
+        "href":"/",
+        "time":"2016.03"
+      },
+      {
+        "item":"List Item 1",
+        "icon":"badge",
+        "href":"/"
+      }
+    ],
+    "textlist":[
+      {
+        "title":"表单面板",
+        "subtitle":"发行公司：滚石唱片",
+        "text":"别问我风从哪里吹来别问我风明天是爱还是不爱一往情深也许最后带来是伤害别问我花猫是黑还是白别问我还欠下",
+        "time":"2016.03"
+      },
+      {
+        "title":"表单面板",
+        "subtitle":"发行公司：滚石唱片",
+        "text":"别问我风从哪里吹来别问我风明天是爱还是不爱一往情深也许最后带来是伤害别问我花猫是黑还是白别问我还欠下",
+        "time":"2016.03",
+        "href":"/"
+      },
+      {
+        "title":"表单面板",
+        "subtitle":"发行公司：滚石唱片",
+        "text":"别问我风从哪里吹来别问我风明天是爱还是不爱一往情深也许最后带来是伤害别问我花猫是黑还是白别问我还欠下",
+        "time":"2016.03",
+        "href":"/"
+      }
+    ],
+    "imglist":[
+      {
+        "src":"img",
+        "title":"第一张精选",
+        "subtitle":"发行公司：滚石唱片",
+        "time":"2016-03"
+      },
+      {
+        "src":"img",
+        "title":"第一张精选",
+        "subtitle":"发行公司：滚石唱片",
+        "time":"2016-03",
+        "href":"/"
+      }
+    ],
+    "imgtextlist":[
+      {
+        "src":"img",
+        "title":"第一张精选",
+        "subtitle":"发行公司：滚石唱片",
+        "text":"别问我风从哪里吹来别问我风明天是爱还是不爱一往情深也许最后带来是伤害别问我",
+        "time":"2016-03",
+        "href":"/"
+      }
+    ],
+    "cardlist1":[
+      {
+        "item":"List Item 4",
+        "icon":"badge"
+      },
+      {
+        "item":"List Item 4"
+      },
+      {
+        "item":"List Item 4",
+        "note":"After"
+      }
+    ],
+    "cardlist2":[
+      {
+        "item":"List Item 4",
+        "href":"/" 
+      },
+      {
+        "item":"List Item 4",
+        "href":"/"
+      },
+      {
+        "item":"List Item 4",
+        "note":"After",
+        "href":"/" 
+      }
+    ],
+    "cardlist3":[
+      {
+        "src":"img",
+        "title":"第一张精选",
+        "subtitle":"发行公司：滚石唱片",
+        "time":"2016-03",
+        "href":"/"
+      },
+      {
+        "src":"img",
+        "title":"第一张精选",
+        "subtitle":"发行公司：滚石唱片",
+        "time":"2016-03",
+        "href":"/"
+      },
+      {
+        "src":"img",
+        "title":"第一张精选",
+        "subtitle":"发行公司：滚石唱片",
+        "time":"2016-03",
+        "href":"/"
+      }
+    ]
+  },
+  "getCards":{
+    "title":"标题",
+    "strong":"文本内容文本内容文本内容",
+    "normal":"文本说明文本说明文本说明文本说明文本说明文本说明",
+    "subtitle":"小标题 17-2-21",
+    "more":"更多"
+  },
+  "getAccordions":[
+    {
+      "title":"文字面板",
+      "content":"别问我风从哪里吹来别问我风明天是爱还是不爱一往情深也许最后带来是伤害别问我花猫是黑还是白别问我还欠下多少情债爱就爱吧如果不爱就离开胡同有些转弯人生有些转弯我们走啊走啊 总会遇到情关小河有些转弯"
+    },
+    {
+      "title":"图片面板",
+      "content":"别问我风从哪里吹来别问我风明天是爱还是不爱一往情深也许最后带来是伤害别问我花猫是黑还是白别问我还欠下多少情债爱就爱吧如果不爱就离开胡同有些转弯人生有些转弯我们走啊走啊 总会遇到情关小河有些转弯"
+    },
+    {
+      "title":"文字面板",
+      "content":"别问我风从哪里吹来别问我风明天是爱还是不爱一往情深也许最后带来是伤害别问我花猫是黑还是白别问我还欠下多少情债爱就爱吧如果不爱就离开胡同有些转弯人生有些转弯我们走啊走啊 总会遇到情关小河有些转弯"
+    }
+  ] 
 }

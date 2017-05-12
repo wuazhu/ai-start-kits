@@ -43,178 +43,55 @@ import AiPanel from '../components/Panel/Panel';
 import goback from '../components/goback';
 export default {
   name: 'AlList',
+
   props:{
 
   },
   data() {
     return {
-      list:[
-        {
-          item:"List Item 1",
-        },
-        {
-          item:"List Item 2"
-        }, 
-      ],
-      hreflist:[
-         {
-          item:"List Item 1",
-          href:"/"
-        },
-        {
-          item:"List Item 2",
-          href:"/",
-          time:"2016.03"
-        }, 
-      ],
-      notelist:[
-        {
-          item:"List Item 1",
-          note:"After"
-        },
-        {
-          item:"List Item 2",
-          note:"After"
-        },
-        {
-          item:"List Item 3",
-          note:"After"
-        },
-      ],
-      cornerlist:[
-        {
-          item:"List Item 7",
-          icon:"badge"
-        },
-        {
-          item:"List Item 8",
-          button:"switch"
-        },
-      ],
-      badgelist:[
-        {
-          item:"List Item 1",
-          href:"/",
-        },
-        {
-          item:"List Item 1",
-          href:"/",
-          time:"2016.03"
-        },
-        {
-          item:"List Item 1",
-          icon:"badge",
-          href:"/"
-        },
-      ],
-      textlist:[
-        {
-          title:"表单面板",
-          subtitle:"发行公司：滚石唱片",
-          text:"别问我风从哪里吹来别问我风明天是爱还是不爱一往情深也许最后带来是伤害别问我花猫是黑还是白别问我还欠下",
-          time:"2016.03"
-        },
-        {
-          title:"表单面板",
-          subtitle:"发行公司：滚石唱片",
-          text:"别问我风从哪里吹来别问我风明天是爱还是不爱一往情深也许最后带来是伤害别问我花猫是黑还是白别问我还欠下",
-          time:"2016.03",
-          href:"/"
-        },
-        {
-          title:"表单面板",
-          subtitle:"发行公司：滚石唱片",
-          text:"别问我风从哪里吹来别问我风明天是爱还是不爱一往情深也许最后带来是伤害别问我花猫是黑还是白别问我还欠下",
-          time:"2016.03",
-          href:"/"
-        },
-      ],
-      imglist:[
-        {
-          src:"img",
-          title:"第一张精选",
-          subtitle:"发行公司：滚石唱片",
-          time:"2016-03"
-        },
-        {
-          src:"img",
-          title:"第一张精选",
-          subtitle:"发行公司：滚石唱片",
-          time:"2016-03",
-          href:"/"
-        },
-        
-      ],
-      imgtextlist:[
-        {
-          src:"img",
-          title:"第一张精选",
-          subtitle:"发行公司：滚石唱片",
-          text:"别问我风从哪里吹来别问我风明天是爱还是不爱一往情深也许最后带来是伤害别问我",
-          time:"2016-03",
-          href:"/"
-        }
-      ],
-      cardlist1:[
-        {
-          item:"List Item 4",
-          icon:"badge"
-        },
-        {
-          item:"List Item 4",
-        },
-        {
-          item:"List Item 4",
-          note:"After"
-        }
-      ],
-      cardlist2:[
-        {
-          item:"List Item 4",
-          href:"/" 
-        },
-        {
-          item:"List Item 4",
-          href:"/"
-        },
-        {
-          item:"List Item 4",
-          note:"After",
-          href:"/" 
-        }
-      ],
-      cardlist3:[
-        {
-          src:"img",
-          title:"第一张精选",
-          subtitle:"发行公司：滚石唱片",
-          time:"2016-03",
-          href:"/"
-        },
-        {
-          src:"img",
-          title:"第一张精选",
-          subtitle:"发行公司：滚石唱片",
-          time:"2016-03",
-          href:"/"
-        },
-        {
-          src:"img",
-          title:"第一张精选",
-          subtitle:"发行公司：滚石唱片",
-          time:"2016-03",
-          href:"/"
-        },
-      ],
-
+      list:new Array,
+      hreflist:new Array,
+      notelist:new Array,
+      cornerlist:new Array,
+      badgelist:new Array,
+      textlist:new Array,
+      imglist:new Array,
+      imgtextlist:new Array,
+      cardlist1:new Array,
+      cardlist2:new Array,
+      cardlist3:new Array
     }
   },
-  components:{ AiPanel,goback }
+  components:{ AiPanel,goback },
+  created(){
+    this.$http.get('/api/getAllLists')
+      .then( (res) => {
+        //res.bodyText=JSON.parse(res.bodyText);
+        let text=JSON.parse(res.bodyText);
+        this.list=[].concat(text.list);
+        this.hreflist=text.hreflists;
+        this.notelist=text.notelist;
+        this.cornerlist=text.cornerlist;
+        this.badgelist=text.badgelist;
+        this.textlist=text.textlist;
+        this.imglist=text.imglist;
+        this.imgtextlist=text.imgtextlist;
+        this.cardlist1=text.cardlist1;
+        this.cardlist2=text.cardlist2;
+        this.cardlist3=text.cardlist3;
+        //console.log(this.list);
+      }, (err) => {
+        console.log(err)
+      })
+  }
 }
+
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="less">
 @import "../assets/less/list.less";
-
+.ai-list{
+  margin-top: 95/75*1rem;
+}
 </style>

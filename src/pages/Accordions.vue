@@ -21,21 +21,19 @@ export default {
   components:{ goback,accordion},
   data() {
     return {
-      list:[
-        {
-          title:"文字面板",
-          content:"别问我风从哪里吹来别问我风明天是爱还是不爱一往情深也许最后带来是伤害别问我花猫是黑还是白别问我还欠下多少情债爱就爱吧如果不爱就离开胡同有些转弯人生有些转弯我们走啊走啊 总会遇到情关小河有些转弯"
-        },
-        {
-          title:"图片面板",
-          content:"别问我风从哪里吹来别问我风明天是爱还是不爱一往情深也许最后带来是伤害别问我花猫是黑还是白别问我还欠下多少情债爱就爱吧如果不爱就离开胡同有些转弯人生有些转弯我们走啊走啊 总会遇到情关小河有些转弯"
-        },
-        {
-          title:"文字面板",
-          content:"别问我风从哪里吹来别问我风明天是爱还是不爱一往情深也许最后带来是伤害别问我花猫是黑还是白别问我还欠下多少情债爱就爱吧如果不爱就离开胡同有些转弯人生有些转弯我们走啊走啊 总会遇到情关小河有些转弯"
-        }
-      ]
+      list:new Array
     }
+  },
+  created(){
+    this.$http.get('/api/getAccordions')
+      .then( (res) => {
+        //res.bodyText=JSON.parse(res.bodyText);
+        let text=JSON.parse(res.bodyText);
+        this.list=text;
+        //console.log(text);
+      }, (err) => {
+        console.log(err)
+      })
   }
 }
 </script>
@@ -45,6 +43,9 @@ export default {
    @import '../assets/less/config.less';
    *{
     overflow: hidden;
+   }
+   .accordions{
+    margin-top: 70/75*1rem;
    }
    h3{
     .fs30;

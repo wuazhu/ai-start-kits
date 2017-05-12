@@ -2,11 +2,11 @@
   <div class="cards">
     <goback></goback>
     <card>
-    	<span slot="title">标题</span>
-    	<h1 slot="strong">文本内容文本内容文本内容</h1>
-    	<p>文本说明文本说明文本说明文本说明文本说明文本说明</p>
-    	<span slot="subtitle">小标题 17-2-21</span>
-      <router-link to="/" slot="more">更多</router-link>
+    	<span slot="title">{{title}}</span>
+    	<h1 slot="strong">{{strong}}</h1>
+    	<p>{{normal}}</p>
+    	<span slot="subtitle">{{subtitle}}</span>
+      <router-link to="/" slot="more">{{more}}</router-link>
     </card>
   </div>
 </template>
@@ -16,7 +16,33 @@ import card from '../components/card/card'
 import goback from '../components/goback'
 export default {
   name: 'cards',
-  components:{ card,goback }
+  components:{ card,goback },
+  data() {
+    return {
+      title:new String,
+      strong:new String,
+      normal:new String,
+      subtitle:new String,
+      more:new String
+    }
+  },
+  created(){
+    this.$http.get('/api/getCards')
+      .then( (res) => {
+        //res.bodyText=JSON.parse(res.bodyText);
+        let text=JSON.parse(res.bodyText);
+        this.title=text.title;
+        this.strong=text.strong;
+        this.normal=text.normal;
+        this.subtitle=text.subtitle;
+        this.more=text.more;
+        //console.log(text);
+      }, (err) => {
+        console.log(err)
+      })
+  }
+
+
 }
 </script>
   
