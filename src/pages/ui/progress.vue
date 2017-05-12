@@ -9,9 +9,15 @@
 </style>
 <script>
 import goback from '../../components/goback'
+
 export default {
   components: {
     goback
+  },
+  data() {
+    return {
+      percent : 50
+    }
   }
 }
 </script>
