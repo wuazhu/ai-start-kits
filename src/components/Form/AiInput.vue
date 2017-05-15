@@ -69,7 +69,8 @@ input{
   font-family: "Heiti SC";
 } -->
 <!-- </style> -->
-<style lang='less' scope>
+
+<style lang='less'>
   @import "../../assets/less/Input";
   @import "../../assets/less/Label.less";
 </style>

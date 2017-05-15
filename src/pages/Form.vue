@@ -1,11 +1,11 @@
 <template>
     <div class="index">
       <div>
-        <goback></goback>
+        <!-- <goback></goback> -->
       </div>
       <div class="form">
         <div class="search-input">
-          <!-- <ai-search></ai-search> -->
+          <ai-search  v-bind:optionsdata="single.originOptions" v-bind:selecteddata="single.selected" v-on:selected="singleCallback"></ai-search>
         </div>
         <div>
           <h2 class="form-title">表单</h2>
@@ -228,14 +228,38 @@ import goback from "../components/goback"
         qq: '' ,//qq
         mobile: '',//手机号
         code: '',//验证码
-        bank: ''//银行卡
+        bank: '',//银行卡
+        single: {
+            originOptions: [],
+            selected: {}
+        }
       }
+    },
+    mounted: function() {
+		this.queryData();
     },
     methods:{
       fn(val){
         console.log('触发父级一个方法'+'值为'+val);
         this.temp1++//操作父级的数据
-      }
+      },
+      queryData: function(){
+            var mySelf = this
+            //do ajax here
+
+            // 单选
+            mySelf.single.originOptions = [{"id":"1","name":"lemon"},{"id":"2","name":"mike"},{"id":"3","name":"lara"},{"id":"4","name":"zoe"},{"id":"5","name":"steve"},{"id":"6","name":"nolan"}];
+            mySelf.single.selected = {"id":"6","name":"nolan"}
+
+            this.$nextTick(function(){
+
+            })
+		},
+        singleCallback: function(data){
+            this.single.selected = data;
+            console.log('父级元素调用singleCallback 选中的是' + JSON.stringify(data))
+
+        }
     },
     components:{
       goback,
