@@ -24,19 +24,28 @@
   }
 
   .header{
-	.width(750-64);
-	.height(@ttheight);
-	line-height: @ttheight/75*1rem;
-  	.pr(@ttpd);
-  	h3{
-  		width: auto;
-  		.fs(@ttfs);
-  		font-family: "STHeitiSC";
+  	.width(750-64);
+  	.height(@ttheight);
+  	line-height: @ttheight/75*1rem;
+    .pr(@ttpd);
+    width: auto;
+    .fs30;
+    font-family: "STHeitiSC";
+    .icon{
+      .pt(30);
+  	  position: relative;
+  	  float: right;
   	}
-  	.icon{
-  		position: relative;
-  		float: right;
-  	}
+    .icontop{
+      .width(46);
+      .height(26);
+      background: url(../../assets/img/accordion/2.png) center bottom no-repeat;
+    }
+    .icondown{
+      .width(46);
+      .height(26);
+      background: url(../../assets/img/accordion/1.png) center bottom no-repeat;
+    }
   }
   
   .content{
@@ -51,4 +60,14 @@
   	}
   }
 
- 
+ .slide-enter-active {
+  transition: all .3s ease;
+
+}
+.slide-leave-active {
+  transition: all .3s ease;
+}
+.slide-enter, .slide-leave-active {
+  transform: translateY(-10px);
+  opacity: 0;
+}

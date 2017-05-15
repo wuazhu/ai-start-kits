@@ -1,34 +1,48 @@
 <template>
-  <div :class="['collapse',{active:isActive}]" >
-	<div class="header" @click="toggle()">
-		<h3>{{title}}</h3>
-		<i class="icon icontop"></i>
-	</div>
-
-    <div class="content" v-if="show">
-    	<slot></slot>
-    </div>  
+  <div :class="['collapse',activeClass]" >
+  	<h1 class="header" @click="toggle">
+  		<slot></slot>
+  		<i :class="['icon',iconClass]"></i>
+  	</h1>
+    <div class="content" v-show="isActive">
+    	<slot name="content"></slot>
+    </div>
   </div>
 </template>
 
 <script>
+
 export default {
   name: 'Collapse',
   props:{
-  	title:String,
-  	accordion: Boolean,
+    name:{
+        type: String
+      }
   },
   data(){
   	return {
-  		show:false,
-  		isActive:false
+  		isActive:false 
   	}
   },
+  computed:{
+    activeClass() {
+      return {
+        'activeClass':this.isActive
+      }
+    },
+    iconClass() {
+      return {
+        'icontop':!this.isActive,
+        'icondown':this.isActive,
+      }
+    }
+  },
   methods:{
-  	toggle(el){
-  		this.show=!this.show;
-  		this.isActive=!this.isActive;
-  		console.log(this.$parent.$el.querySelector(".active"));
+  	toggle(){
+      this.$parent.toggle({
+        name: this.name,
+        isActive: this.isActive
+      });  		
   	}
   }
 }
