@@ -134,6 +134,8 @@ export default {
 }
 .search{
   border-radius: 10px;
+  outline: none;
+  border:0;
   .width(@wd);
   .height(@ht);
   .ml(16);
