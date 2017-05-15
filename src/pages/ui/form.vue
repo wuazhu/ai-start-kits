@@ -2,7 +2,6 @@
   <div class="index">
     <div class="form uis">
       <goback></goback>
-      i am form page
     </div>
     <div class="form">
       <div class="search-input">

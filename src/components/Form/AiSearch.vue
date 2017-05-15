@@ -161,7 +161,7 @@ export default {
 	height: 48px;
   .width(@wd);
 	line-height: 48px;
-	box-sizing: border-box;
+	// box-sizing: border-box;
 	text-indent: 5px;
 	padding: 6px;
 }
