@@ -1,9 +1,9 @@
 <template>
   <div class="index">
-    <!-- <div class="form uis">
+    <div class="form uis">
       <goback></goback>
       i am form page
-    </div> -->
+    </div>
     <div class="form">
       <div class="search-input">
         <ai-search  v-bind:optionsdata="single.originOptions" v-bind:selecteddata="single.selected" v-on:selected="singleCallback"></ai-search>
