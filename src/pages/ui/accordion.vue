@@ -65,10 +65,8 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="less">
    @import '../../assets/less/config.less';
-   *{
-    overflow: hidden;
-   }
    .accordions{
+    overflow: hidden;
     margin-top: 90/75*1rem;
    }
    h3{
