@@ -2,7 +2,7 @@
   <div :class="['collapse',activeClass]" >
   	<h1 class="header" @click="toggle">
   		<slot></slot>
-  		<i :class="['icon',iconClass]"></i>
+  		<i class="icon"></i>
   	</h1>
     <div class="content" v-show="isActive">
     	<slot name="content"></slot>

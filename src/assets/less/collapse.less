@@ -33,22 +33,21 @@
     .fs30;
     font-family: "STHeitiSC";
     .icon{
-      .pt(30);
   	  position: relative;
+      top:30/75*1rem;
   	  float: right;
-  	}
-    .icontop{
       .width(46);
       .height(26);
       background: url(../../assets/img/accordion/2.png) center bottom no-repeat;
-    }
-    .icondown{
-      .width(46);
-      .height(26);
-      background: url(../../assets/img/accordion/1.png) center bottom no-repeat;
+      background-size: 40/75*1rem 24/75*1rem;
+      transition: transform .2s ease-in-out;
+  	}
+  }
+  .activeClass{
+    .icon{
+      transform: rotate(180deg);
     }
   }
-  
   .content{
 	.pr(70);
 	.fs(30);
