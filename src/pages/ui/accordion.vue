@@ -13,7 +13,7 @@
 </template>
 <style lang="less">
 @import '../../assets/less/config';
-*{
+.accordion{
    overflow: hidden;
  }
  .accordion{
