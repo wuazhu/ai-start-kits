@@ -2,7 +2,7 @@
   <div class="functional-select-wrapper" v-on:click.stop="singleFocus()">
       <div class="options-container">
           <div class="search-container">
-              <input placeholder="搜索" class="search" v-model="search" v-on:keyup="singleSearch()" v-on:click.stop />
+            <input placeholder="搜索" class="search" v-model="search" v-on:keyup="singleSearch()" v-on:click.stop />
           </div>
           <ul class="options-ul-list" v-show='isSelected'>
             <!-- <li v-show="!result">没有查询到数据</li> -->
