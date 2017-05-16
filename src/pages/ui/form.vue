@@ -7,6 +7,9 @@
       <div class="search-input">
         <ai-search  v-bind:optionsdata="single.originOptions" v-bind:selecteddata="single.selected" v-on:selected="singleCallback"></ai-search>
       </div>
+      <div class="search-input1">
+        <ai-search1></ai-search1>
+      </div>
       <div>
         <h2 class="form-title">表单</h2>
       </div>
@@ -90,38 +93,12 @@
 body{
   background-color: #F6F6F6;
 }
-// form label{
-//   display:inline-block;
-//   .width(75);
-//   text-align:left;
-// }
-// form fieldset{
-//   border:0;
-//   align:left;
-//   padding: 0;
-//   p{
-//     .mb(0);
-//     .mt(0);
-//     text-align: left;
-//   }
-// }
 #app{
   background-color: #F6F6F6;
 }
 .index{
   .fs(30);
 }
-// .title{//input名称
-//   .width(28);
-//   // .height(90);
-//   .fs(32);
-//   .ml(32);
-//   .pt(24);
-//   .pb(24);
-//   font-family: "Heiti SC";
-//   color: rgb(0, 0, 0);
-//   display:inline-block;
-// }
 .input-content{//输入框
   .height(90);
 }
@@ -219,6 +196,7 @@ import AiButton  from "../../components/Form/AiButton";
 import AiAlert from "../../components/Form/AiAlert";
 import AiSwitch from "../../components/Form/AiSwitch";
 import AiSearch from "../../components/Form/AiSearch";
+import AiSearch1 from "../../components/Form/AiSearch1"
   export default {
     data() {
       return {
@@ -268,15 +246,12 @@ import AiSearch from "../../components/Form/AiSearch";
       AiButton,
       AiAlert,
       AiSwitch,
-      AiSearch
+      AiSearch,
+      AiSearch1
     },
     created(){
       this.$http.get('/api/getInputs')
      .then( (res) => {
-       // console.log(res)
-       // res.bodyText=res.toString();
-       // console.log(typeof(res.bodyText));
-       // console.log(JSON.parse(res.bodyText))
        res.bodyText=JSON.parse(res.bodyText)
        this.qq=res.bodyText.qq;
        this.mobile=res.bodyText.mobile;

@@ -18,5 +18,5 @@ export default {
 </script>
 
 <style lang="less" scope>
-// @import "../../assets/less/Label.less";
+@import "../../assets/less/Label.less";
 </style>
