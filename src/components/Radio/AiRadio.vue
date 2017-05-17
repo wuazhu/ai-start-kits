@@ -106,7 +106,7 @@
         return this.left;
       },
       isRight(){
-        return this.left;
+        return this.right;
       }
     }
   };
@@ -115,12 +115,13 @@
 @import  "../../assets/less/config";
   .radio-label{
     display: block;
-    margin-bottom: 6px;
+    .mb(6);
+    .ml(80);
     line-height: 19px;
     font-weight: 400;
     .fs30;
     color: rgb( 32, 32, 32);
-    text-align: left;
+    // text-align: left;
   }
   .span1{
     .mr(25);
@@ -173,6 +174,13 @@
       .mt(20);
       .pb(20);
       border-bottom: solid 1px rgb(219, 219, 222);
+      & .radio-input{
+
+        text-align: right;
+      }
+      & .span1{
+        // .mr(-180)
+      }
     }
   }
   //组件字体样式

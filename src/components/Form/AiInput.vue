@@ -1,7 +1,7 @@
 <template>
   <!-- <input :type="type" :name="name" :value="value" :placeholder='placeholder' > -->
   <div class="input-span">
-    <label :class="cssTitle">
+    <label :class="cssTitle" v-if='label'>
       <slot>
         {{label}}
       </slot>

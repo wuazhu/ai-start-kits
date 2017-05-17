@@ -20,7 +20,7 @@
         <p>图标右对齐</p>
       </div>
       <div class="right">
-        <div><ai-radio class="radio" v-model='radio' label='4'>radio</ai-radio><br/></div>
+        <div><ai-radio class="radio" v-model='radio' label='4' :left='false'>radio</ai-radio><br/></div>
         <div><ai-radio class="radio" v-model='radio' label='5'>radio</ai-radio><br/></div>
         <div><ai-radio class="radio" v-model='radio' label='6' disabled>radio</ai-radio></div>
       </div>
@@ -54,21 +54,21 @@
 //   }
 // }
 //右对齐样式
-.right{
-  .ml(32);
-  .mr(32);
-  .mt(16);
-  .mb(16);
-  background-color: white;
-  border: solid 1px rgb(219, 219, 222);
-  border-radius: 10px;
-  & div{
-    .ml(25);
-    .mt(20);
-    .pb(20);
-    border-bottom: solid 1px rgb(219, 219, 222);
-  }
-}
+// .right{
+//   .ml(32);
+//   .mr(32);
+//   .mt(16);
+//   .mb(16);
+//   background-color: white;
+//   border: solid 1px rgb(219, 219, 222);
+//   border-radius: 10px;
+//   & div{
+//     .ml(25);
+//     .mt(20);
+//     .pb(20);
+//     border-bottom: solid 1px rgb(219, 219, 222);
+//   }
+// }
 //组件字体样式
 .radio{
   .fs30;
