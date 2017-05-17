@@ -11,7 +11,12 @@
         @focus="focus = true"
         @blur="focus = false"
         :name="name"
-        :disabled="isDisabled">
+        :disabled="isDisabled"
+        :class="{
+          'right':isRight,
+          'left':isLeft
+          }"
+        >
     <span class='span1'
           :class="{
             'is-disabled': isDisabled,
@@ -32,7 +37,8 @@
       value: {},
       label: {},
       disabled: Boolean,
-      name: String
+      name: String,
+      pos: String
     },
 
     data() {
@@ -94,6 +100,9 @@
         return this.isGroup
           ? this._radioGroup.disabled || this.disabled
           : this.disabled;
+      },
+      isRight() {
+
       }
     }
   };
@@ -128,5 +137,42 @@
       border: 2px solid rgb(65, 157, 245);
       background:url(../../assets/img/radio/radio_on.png) no-repeat;
       background-position: 9.5px 9.5px
+  }
+
+  //左对齐样式
+  .left{
+    .ml(32);
+    .mr(32);
+    .mt(16);
+    .mb(16);
+    background-color: white;
+    border: solid 1px rgb(219, 219, 222);
+    border-radius: 10px;
+    & div{
+      .ml(25);
+      .mt(20);
+      .pb(20);
+      border-bottom: solid 1px rgb(219, 219, 222);
+    }
+  }
+  //右对齐样式
+  .right{
+    .ml(32);
+    .mr(32);
+    .mt(16);
+    .mb(16);
+    background-color: white;
+    border: solid 1px rgb(219, 219, 222);
+    border-radius: 10px;
+    & div{
+      .ml(25);
+      .mt(20);
+      .pb(20);
+      border-bottom: solid 1px rgb(219, 219, 222);
+    }
+  }
+  //组件字体样式
+  .radio{
+    .fs30;
   }
 </style>

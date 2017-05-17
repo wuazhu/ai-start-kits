@@ -77,7 +77,7 @@
 <script>
 import goback from '../../components/goback'
 import AiRadio from '../../components/Radio/AiRadio'
-import AiCheck from '../../components/Check/AiCheck'
+// import AiCheck from '../../components/Check/AiCheck'
 export default {
   data(){
     return{
@@ -86,8 +86,7 @@ export default {
   },
   components: {
     goback,
-    AiRadio,
-    AiCheck
+    AiRadio
   }
 }
 </script>
