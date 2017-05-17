@@ -24,7 +24,7 @@ import Feedback from '../pages/ui/feedback'
 import Stepbar from '../pages/ui/stepbar'
 import Timeline from '../pages/ui/timeline'
 // jspages
-import Dialog from '../pages/js/dialog'
+import Dialog from '../pages/js/dialogs'
 import Actionsheet from '../pages/js/actionsheet'
 import Chart from '../pages/js/chart'
 import IndexList from '../pages/js/indexList'

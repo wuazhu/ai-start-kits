@@ -1,0 +1,167 @@
+@import './main.less';
+
+.v-modal-enter{
+	animation:v-modal-in .2s ease
+}
+.v-modal-leave{
+	animation:v-modal-out .2s ease forwards
+}
+@keyframes v-modal-in{
+	0%{opacity:0}
+}
+@keyframes v-modal-out{
+	100%{opacity:0}
+}
+.v-modal{
+	position:fixed;
+	left:0;
+	top:0;
+	width:100%;
+	height:100%;
+	opacity:.5;
+	background:#acacac;
+	z-index: 2;
+}
+.del{
+	.width(75);
+	.height(76);
+	background: url(../img/dialog/del.png) no-repeat;
+}
+.ai-dialog{
+	top:0;
+	right:0;
+	bottom:0; 
+	left:0;
+	position:absolute;
+	overflow:auto;
+	margin:0;
+	width: 100%;
+	height: 100vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.dialog-wrap{
+	.width(544);
+	height:auto;
+  	border-radius: 16/75*1rem;
+  	-webkit-border-radius: 16/75*1rem;
+  	background-color: rgb( 255, 255, 255 );
+  	z-index: 3;
+  	position: relative;
+  	.addmt{
+  		.mt(25);
+  		.mb(40);
+  	}
+  	.popdel{
+		position: absolute;
+		z-index: 4;
+		top:120%;
+		left: 43%;
+	}
+	.dialog-header{
+		.height(59);
+		.pt(54);
+		.fs(34);
+		font-family: "Adobe Heiti Std";
+		font-weight: bold;
+		color: rgb( 0, 0, 0 );
+		text-align: center;
+	}
+	.dialog-content{
+  		.fs(26);
+  		.pb(30);
+  		height:auto;
+  		font-weight: 500;
+  		font-family: "Adobe Heiti Std";
+  		color: rgb( 50, 50, 50 );
+  		text-align: center;
+	}
+
+	.dialog-footer{
+		width: 100%;
+		.height(90);
+		border-top:1px solid;
+		border-top-color: #e7e7e7;
+		.fs(34);
+		font-weight: 500;
+		font-family: "Adobe Heiti Std";
+
+		.confirm{
+			width: 50%;
+			height: 100%;
+			color: rgb( 65, 157, 245 );
+			line-height: 0.882;
+			text-align: center;
+			align-items: center;
+			display: flex;
+			justify-content: center;
+			position: relative;
+			float: left;
+		}
+		.autowidth{
+			width: 100%;
+		}
+		.cancel{
+  			color: rgb( 184, 184, 184 );
+			width: 50%;
+			height: 100%;
+			line-height: 0.882;
+			text-align: center;
+			align-items: center;
+			display: flex;
+			justify-content: center;
+			position: relative;
+			float: left;
+			border:1px solid;
+			border-color:transparent #e7e7e7 transparent transparent;
+			margin:-2px;
+		}	
+	}
+}
+.dialog-window{
+	margin: auto;
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: #f6f6f6;
+	z-index: 999;
+	
+	.dialog-title{
+		width: 100%;
+		.height(88);
+		line-height: 88/75*1rem;
+		background-color: #393a40;
+		text-align: center;
+		h1{
+			position: relative;
+			left: 30/75*1rem;
+			display: inline-block;
+			.fs(34);
+	        font-family: "Adobe Heiti Std";
+	        color: rgb( 255, 255, 255 );
+		}
+		.del{
+			.width(75);
+			.height(76);
+			position: relative;
+			top:18/75*1rem;
+			float: right;
+			background: url(../img/dialog/del.png) no-repeat;
+			background-size: 70%;
+			
+		}
+	}
+	.dialog-content{
+		p{
+			.fs(30);
+	  		font-family: "Adobe Heiti Std";
+	  		color: rgb( 0, 0, 0 );
+	  		line-height: 2.867;
+			text-align: center;
+		}
+	}
+}
