@@ -38,7 +38,8 @@
       label: {},
       disabled: Boolean,
       name: String,
-      pos: String
+      left: Boolean,
+      right: Boolean
     },
 
     data() {
@@ -101,8 +102,11 @@
           ? this._radioGroup.disabled || this.disabled
           : this.disabled;
       },
-      isRight() {
-
+      isLeft() {
+        return this.left;
+      },
+      isRight(){
+        return this.left;
       }
     }
   };

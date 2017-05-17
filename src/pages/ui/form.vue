@@ -18,14 +18,14 @@
       <form method="post"action="login.php" class="content">
         <fieldset>
           <div class="input-border">
-            <ai-input type="text"name="qq"placeholder="请输入qq号"required="required" :label="qq"/>
+            <ai-input type="text"name="qq" placeholder="请输入qq号"required="required" :label="qq"/>
           </div>
           <div class="input-border">
             <ai-input type="text"name="mobile"placeholder="请输入手机号"required="required" :default-value="null" :temp="temp1" v-on:receive='fn' v-model='temp1' :label="mobile"/>
             <ai-button btn-content='获取验证码' class='num-btn'></ai-button>
           </div>
           <div class="input-border">
-            <ai-input type="text"name="mobile"placeholder="请输入手机号"required="required" :default-value="null" :temp="temp1" v-on:receive='fn' v-model='temp1' :label="code"/>
+            <ai-input type="text"name="mobile"placeholder="请输入验证码"required="required" :default-value="null" :temp="temp1" v-on:receive='fn' v-model='temp1' :label="code"/>
             <ai-button btn-content='45s' class='num-btn' disabled></ai-button>
           </div>
         </fieldset>
@@ -210,7 +210,8 @@ import AiSearch1 from "../../components/Form/AiSearch1"
         single: {
             originOptions: [],
             selected: {}
-        }
+        },
+        inputqq: "请输入qq号"
       }
     },
     mounted: function() {

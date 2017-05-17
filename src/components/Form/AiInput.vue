@@ -9,7 +9,7 @@
     <input :type="type"
           :name="name"
           :value="defaultValue"
-          :placeholder="placeholder"
+          :placeholder="c_placeholder"
           @blur='isfn'
           class='input'
           >
@@ -20,13 +20,13 @@
 <script>
 export default {
   name:'input',
-  props:["defaultValue","label",'edit','temp'],//defaultValue为默认的初始值
+  props:["defaultValue","label",'edit','temp','placeholder'],//defaultValue为默认的初始值
   data(){
     return{
       type:'text',//默认text类型
       name:'',//设置name属性
       value:'',//设置value属性 defaultValue为默认初始值
-      placeholder:'请输入内容',//设置placeholder属性
+      // placeholder:'请输入内容',//设置placeholder属性
       isinput:false,
       template:'',
       cssTitle:'title'//默认css样式
@@ -49,7 +49,10 @@ export default {
       // 仅读取，值只须为函数
       template2: function () {
           return this.temp
-        }
+        },
+      c_placeholder: function(){
+        return this.placeholder;
+      }
     }
 }
 </script>
