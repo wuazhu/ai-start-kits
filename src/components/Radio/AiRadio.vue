@@ -2,7 +2,10 @@
   <label class='radiobox' :class="{
     'is-disabled': isDisabled,
     'is-checked': model === label,
-    'is-focus': focus
+    'is-focus': focus,
+    'is-right': right,
+    'is-left': left,
+    'is-list': list
   }">
       <input class='radio-input'
         :value="label"
@@ -12,19 +15,17 @@
         @blur="focus = false"
         :name="name"
         :disabled="isDisabled"
-        :class="{
-          'right':isRight,
-          'left':isLeft
-          }"
         >
     <span class='span1'
           :class="{
             'is-disabled': isDisabled,
             'is-checked': model === label,
-            'is-focus': focus
+            'is-focus': focus,
+            /*'span1': list,*/
+            'span2': list
           }">
       <!-- model的值对应父组件的radio值 v-model绑定 -->
-      <!-- <template v-if="!$slots.default">{{label}}</template> -->
+      <!-- <template v-if="!$slots.default">{{isLeft}}</template> -->
     </span>
     <slot></slot>
   </label>
@@ -39,7 +40,10 @@
       disabled: Boolean,
       name: String,
       left: Boolean,
-      right: Boolean
+      right: Boolean,
+      list: Boolean,
+      span1: Boolean,
+      span2: Boolean
     },
 
     data() {
@@ -102,12 +106,15 @@
           ? this._radioGroup.disabled || this.disabled
           : this.disabled;
       },
-      isLeft() {
-        return this.left;
-      },
-      isRight(){
-        return this.right;
-      }
+      // isLeft() {
+      //   return this.left;
+      // },
+      // isRight(){
+      //   return this.right;
+      // },
+      // isList(){
+      //   return this.list;
+      // }
     }
   };
 </script>
@@ -143,48 +150,36 @@
       background:url(../../assets/img/radio/radio_on.png) no-repeat;
       background-position: 9.5px 9.5px
   }
+//列表选中样式 显示对勾
+.radiobox input[type="radio"]+.span2{
+      display: inline-block;
+      width: 44px;
+      height: 44px;
+      vertical-align: middle;
+      border-radius: 50%;
+      border: 0;
+      // border: 2px solid rgb(169, 169, 169);
+      background-color: white;
+  }
+.radiobox input[type="radio"]:checked+.span2 {
+      // border: 2px solid rgb(65, 157, 245);
+      border: 0;
+      background:url(../../assets/img/radio/selected.png) no-repeat;
+      background-position: 9.5px 9.5px
+  }
+//  左对齐样式
+.is-left .span1{
 
-  //左对齐样式
-  .left{
-    .ml(32);
-    .mr(32);
-    .mt(16);
-    .mb(16);
-    background-color: white;
-    border: solid 1px rgb(219, 219, 222);
-    border-radius: 10px;
-    & div{
-      .ml(25);
-      .mt(20);
-      .pb(20);
-      border-bottom: solid 1px rgb(219, 219, 222);
-    }
-  }
-  //右对齐样式
-  .right{
-    .ml(32);
-    .mr(32);
-    .mt(16);
-    .mb(16);
-    background-color: white;
-    border: solid 1px rgb(219, 219, 222);
-    border-radius: 10px;
-    & div{
-      .ml(25);
-      .mt(20);
-      .pb(20);
-      border-bottom: solid 1px rgb(219, 219, 222);
-      & .radio-input{
+}
+//右对齐样式
+.is-right .span1{
+  .ml(565);
+  .mr(-625);
+}
+//列表样式
+.is-list .span2{
+  .ml(565);
+  .mr(-625);
+}
 
-        text-align: right;
-      }
-      & .span1{
-        // .mr(-180)
-      }
-    }
-  }
-  //组件字体样式
-  .radio{
-    .fs30;
-  }
 </style>
