@@ -1,5 +1,5 @@
 <template>
-  <div class="dialogs">
+  <div class="dialogs js">
     <goback></goback>
 
     <div class="content"> 
@@ -126,6 +126,9 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style lang="less">
 @import '../../assets/less/config.less';
+.js{
+  .pt(90);
+}
 .content{
   width:100%;
   .pt(130);
@@ -143,13 +146,20 @@ button{
   }
 }
 .input-box{
-  .mt(20);
+  .pt(20);
+  height: auto;
   .input-span{
     margin:0;
   }
+  .inpput-span{
+    line-height: 0;
+
+  }
   input{
-    .width(473);
+    //.width(473);
+    width: 80%;
     .height(62);
+    .pl(20);
   }
 }
 
