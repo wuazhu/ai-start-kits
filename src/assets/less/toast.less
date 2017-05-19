@@ -1,0 +1,58 @@
+@import './main.less';
+
+/*清楚浮动*/
+.clearfix{
+    zoom:1;
+    &:after{
+      clear:both;   
+      overflow:hidden; 
+      content:"";   
+      display:table; 
+    }
+  }
+.ai-toast{
+	position: fixed;
+	z-index: 1;
+}
+.toast{
+	.width(260);
+	.height(260);
+	border-radius: 16px;
+	background-color: rgb( 0, 0, 0 );
+	opacity: 0.6;
+	text-align: center;
+	p{
+		.fs(32);
+        font-family: "STHeitiSC";
+        color: rgb( 255, 255, 255 );
+	}
+}
+.toast-icon{
+	position: relative;
+	float: left;
+}
+
+.top{
+	position: fixed;
+	top:8%;
+	left: 35%;
+}
+.default{
+	position: fixed;
+	top:40%;
+	left: 35%;
+}
+
+.finished{
+	.width(260);
+	.height(184);
+	.pl(20);
+	background: url(../../assets/img/toast/finished.png) center center no-repeat;
+	background-size: 40%;
+}
+.loading{
+	.width(260);
+	.height(184);
+	background: url(../../assets/img/toast/loading.gif) center center no-repeat;
+	background-size: 40%;
+}
