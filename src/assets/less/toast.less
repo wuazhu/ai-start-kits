@@ -11,13 +11,14 @@
     }
   }
 .ai-toast{
-	position: fixed;
+	position:fixed;
 	z-index: 1;
 }
 .toast{
-	.width(260);
-	.height(260);
+	width:auto;
+	height:auto;
 	border-radius: 16px;
+	margin:0 auto;
 	background-color: rgb( 0, 0, 0 );
 	opacity: 0.6;
 	text-align: center;
@@ -25,6 +26,8 @@
 		.fs(32);
         font-family: "STHeitiSC";
         color: rgb( 255, 255, 255 );
+        margin: 25px 30px;
+        text-align:center;
 	}
 }
 .toast-icon{
@@ -34,25 +37,84 @@
 
 .top{
 	position: fixed;
-	top:8%;
-	left: 35%;
+	top:6%;
+	left:34%;
 }
 .default{
 	position: fixed;
 	top:40%;
-	left: 35%;
+	left:34%;
 }
-
+.bottom{
+	position: fixed;
+	bottom:10%;
+	left:34%;
+}
+.toptoast{
+	position:fixed;
+	top:6.3%;
+	left:0;
+	width:100%;
+	border-radius: 0;
+}
 .finished{
 	.width(260);
-	.height(184);
-	.pl(20);
+	.height(180);
 	background: url(../../assets/img/toast/finished.png) center center no-repeat;
 	background-size: 40%;
 }
 .loading{
 	.width(260);
-	.height(184);
+	.height(180);
+	.mt(10);
 	background: url(../../assets/img/toast/loading.gif) center center no-repeat;
 	background-size: 40%;
+}
+.text{
+	display:none;
+}
+.warning{
+	.width(260);
+	.height(180);
+	.mt(10);
+	background: url(../../assets/img/toast/warn.png) center center no-repeat;
+	background-size: 40%;
+}
+.success{
+	.width(260);
+	.height(180);
+	.mt(10);
+	background: url(../../assets/img/toast/success.png) center center no-repeat;
+	background-size: 40%;
+}
+.failure{
+	.width(260);
+	.height(180);
+	.mt(10);
+	background: url(../../assets/img/toast/failure.png) center center no-repeat;
+	background-size: 40%;
+}
+.wrongnet{
+	.width(260);
+	.height(180);
+	.mt(10);
+	background: url(../../assets/img/toast/wrongnet.png) center center no-repeat;
+	background-size: 40%;
+}
+
+.fade-enter-active,.fade-leave-active{
+	transition: opacity .3s;
+
+}
+.fade-enter,.fade-leave-active{
+	opacity: 0;
+}
+
+.slide-fade-enter-active,.slide-fade-leave-active{
+	transition: all .3s ease;
+}
+
+.slide-fade-enter,.slide-fade-leave-active{
+	transform:translateY(-100px);
+	opacity: 0;
 }
