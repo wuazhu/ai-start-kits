@@ -27,9 +27,7 @@
 .js{
   .pt(90);
 }
-.popover{
-	text-align: center;
-}
+
 button{
 	position: fixed;
 	left: 14%;
