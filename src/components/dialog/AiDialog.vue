@@ -1,10 +1,10 @@
 <template>
 	<div class="ai-dialog" v-show="visible">
+		<div class="v-modal" v-if="visible"></div>
 		<!--默认样式-->
 		<template v-if="type==='dialog'">
-			<div class="v-modal"></div>
 			<transition name="slide-fade">	
-			    <div class="dialog-wrap">
+			    <div class="dialog-wrap" v-if="visible">
 			    	<div class="dialog-header">
 			    		<slot name="header"></slot>
 				    </div>
@@ -24,23 +24,24 @@
 		</template>
 		<!--弹出窗口-->
 		<template v-if="type==='dialogWindow'">
-			<div class="dialog-window">
-				<div class="dialog-title">
-					<h1>{{title}}</h1>
-					<i class="del" @click="close()"></i>
+			<transition name="slide">
+				<div class="dialog-window" v-if="visible">
+					<div class="dialog-title">
+						<h1>{{title}}</h1>
+						<i class="del" @click="close()"></i>
+					</div>
+					<div class="dialog-content">
+						<p>
+							<slot></slot>
+						</p>
+					</div>
 				</div>
-				<div class="dialog-content">
-					<p>
-						<slot></slot>
-					</p>
-				</div>
-			</div>
+			</transition>
 		</template>
 		<!--弹窗样式-->
 		<template v-if="type==='dialogPop'">
-			<div class="v-modal"></div>
 			<transition name="slide-fade">	
-			    <div class="dialog-wrap">
+			    <div class="dialog-wrap" v-if="visible">
 			    	<div class="dialog-header">
 			    		<slot name="header"></slot>
 				    </div>
@@ -50,7 +51,6 @@
 				    <i class="del popdel" @click="close()"></i>
 				</div>
 			</transition>
-			
 		</template>
 	</div>
 </template>

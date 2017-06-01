@@ -1,17 +1,5 @@
 @import './main.less';
 
-.v-modal-enter{
-	animation:v-modal-in .2s ease
-}
-.v-modal-leave{
-	animation:v-modal-out .2s ease forwards
-}
-@keyframes v-modal-in{
-	0%{opacity:0}
-}
-@keyframes v-modal-out{
-	100%{opacity:0}
-}
 .v-modal{
 	position:fixed;
 	left:0;
@@ -165,4 +153,29 @@
 			text-align: center;
 		}
 	}
+}
+
+.fade-enter-active,.fade-leave-active{
+	transition: opacity .3s;
+
+}
+.fade-enter,.fade-leave-active{
+	opacity: 0;
+}
+
+.slide-fade-enter-active,.slide-fade-leave-active{
+	transition: all .3s ease;
+}
+
+.slide-fade-enter,.slide-fade-leave-active{
+	transform:translateY(-100px);
+	opacity: 0;
+}
+
+.slide-enter-active,.slide-fade-leave-active{
+	transition: all .30s linear;
+}
+
+.slide-enter,.slide-fade-leave-active{
+	transform:translateY(1334px);
 }
