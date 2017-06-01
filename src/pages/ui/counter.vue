@@ -2,7 +2,7 @@
   <div class="counter uis">
     <goback></goback>
     <div class="counter-wrap">
-      counter 计数器
+      <p>counter 计数器</p>
       <ai-counter></ai-counter>
     </div>
   </div>
@@ -11,6 +11,10 @@
 @import '../../assets/less/config';
 .counter-wrap{
   padding:30px;
+  >p{
+    padding: 20px 0;
+    font-size: 40px;
+  }
 }
 </style>
 <script>

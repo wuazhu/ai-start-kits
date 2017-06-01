@@ -58,6 +58,11 @@
   }
 </style>
 <script>
+/**
+ * @param
+ * min 最小值
+ * max 最大值
+ */
   export default {
     props:{
       min: {
