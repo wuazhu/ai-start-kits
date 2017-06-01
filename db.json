@@ -235,5 +235,35 @@
       "content":"别问我风从哪里吹来别问我风明天是爱还是不爱一往情深也许最后带来是伤害别问我花猫是黑还是白别问我还欠下多少情债爱就爱吧如果不爱就离开胡同有些转弯人生有些转弯我们走啊走啊 总会遇到情关小河有些转弯",
       "name":"3"
     }
+  ],
+  "getTabList":[
+      {
+      "title":"第一个",
+      "img":"../../assets/img/tabBar/img.png",
+      "content":"文字文字文字文字",
+      "price":"16666",
+      "id": "1"
+    },
+      {
+      "title":"第二个",
+      "img":"../../assets/img/tabBar/img.png",
+      "content":"文字文字文字文字",
+      "price":"26666",
+      "id": "2"
+    },
+      {
+      "title":"第三个",
+      "img":"../../assets/img/tabBar/img.png",
+      "content":"文字文字文字文字",
+      "price":"36666",
+      "id": "3"
+    },
+      {
+        "title":"第四个",
+        "img":"../../assets/img/tabBar/img.png",
+        "content":"文字文字文字文字",
+        "price":"46666",
+        "id": "4"
+      }
   ]
 }

@@ -1,5 +1,5 @@
 <template>
-  <label class='radiobox' :class="{
+  <label class='checkbox' :class="{
     'is-disabled': isDisabled,
     'is-checked': model === label,
     'is-focus': focus,
@@ -7,9 +7,9 @@
     'is-left': left,
     'is-list': list
   }">
-      <input class='radio-input'
+      <input class='check-input'
         :value="label"
-        type="radio"
+        type="checkbox"
         v-model="model"
         @focus="focus = true"
         @blur="focus = false"
@@ -118,9 +118,9 @@
     }
   };
 </script>
-<style lang="less" scoped>
+<style lang="less">
 @import  "../../assets/less/config";
-  .radio-label{
+  .check-label{
     display: block;
     .mb(6);
     .ml(80);
@@ -133,10 +133,10 @@
   .span1{
     .mr(25);
   }
-.radiobox input[type="radio"] {
+.checkbox input[type="checkbox"] {
       display: none;
   }
-.radiobox input[type="radio"]+.span1{
+.checkbox input[type="checkbox"]+.span1{
       display: inline-block;
       width: 44px;
       height: 44px;
@@ -145,13 +145,13 @@
       border: 2px solid rgb(169, 169, 169);
       background-color: white;
   }
-.radiobox input[type="radio"]:checked+.span1 {
+.checkbox input[type="checkbox"]:checked+.span1 {
       border: 2px solid rgb(65, 157, 245);
       background:url(../../assets/img/radio/radio_on.png) no-repeat;
       background-position: 9.5px 9.5px
   }
 //列表选中样式 显示对勾
-.radiobox input[type="radio"]+.span2{
+.checkbox input[type="checkbox"]+.span2{
       display: inline-block;
       width: 44px;
       height: 44px;
@@ -161,7 +161,7 @@
       // border: 2px solid rgb(169, 169, 169);
       background-color: white;
   }
-.radiobox input[type="radio"]:checked+.span2 {
+.checkbox input[type="checkbox"]:checked+.span2 {
       // border: 2px solid rgb(65, 157, 245);
       border: 0;
       background:url(../../assets/img/radio/selected.png) no-repeat;
