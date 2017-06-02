@@ -1,7 +1,10 @@
 <template>
   <div class="accordions">
       <goback></goback>
-
+      
+      <br>
+      <br>
+      <br>
       <h3>Default默认</h3>
       <accordion :accordion="accordion">
         <div v-for="x in list">
@@ -66,8 +69,7 @@ export default {
 <style scoped lang="less">
    @import '../../assets/less/config.less';
    .accordions{
-    overflow: hidden;
-    margin-top: 90/75*1rem;
+    
    }
    h3{
     .fs30;
