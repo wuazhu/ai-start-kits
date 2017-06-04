@@ -29,62 +29,27 @@ export default {
   		},
   		posStyle:{},
   		arrowStyle:{},
-  		popover:true
+  		popover:true,
+  		popbodyWidth:0,
+  		popbodyHeight:0,
+  		triangleWidth:0,
+  		triangleHeight:0,
+  		maxWidth:0
   	}
   },
-  mounted () {
-  	this.$nextTick(() => {
-  		//弹窗主体
+  mounted () {	
+  		//弹窗可见主体
   		const popbody = this.$refs.popbody;
-  		//按钮主体
-		const trigger = this.$refs.trigger.children[0];
-		//arrow主体
+  		this.popbodyWidth=popbody.offsetWidth;
+  		this.popbodyHeight=popbody.offsetHeight;
+  		//arrow可见主体
 		const triangle = this.$refs.triangle;
-		//获取节点盒子
-		let triggerPos = trigger.getBoundingClientRect();
-		let trianglePos = triangle.getBoundingClientRect();
-		let maxWidth = document.documentElement.clientWidth;
-		//这里的triangle.offsetHeight/2是三角形高度的补偿
-		switch (this.arrow){
-			case 'down' :
-				this.pos.top=parseInt(triggerPos.top-popbody.offsetHeight-triangle.offsetHeight/2);
-				this.pos.left=parseInt(triggerPos.left+(triggerPos.width-popbody.offsetWidth)/2);
-				this.arrowPos.left=parseInt(triggerPos.left+(trigger.offsetWidth-triangle.offsetWidth)/2);
-				//这里的2是为了遮住弹窗主体的边框
-				this.arrowPos.top=parseInt(triggerPos.top-triangle.offsetHeight+triangle.offsetHeight/2-2);
-				break;
-			case 'top' :
-				this.arrowPos.left=parseInt(triggerPos.left+(trigger.offsetWidth-triangle.offsetWidth)/2);
-				this.arrowPos.top=parseInt(triggerPos.top+trigger.offsetHeight-triangle.offsetHeight/2-2);
-				this.pos.top=parseInt(triggerPos.top+triangle.offsetHeight);
-				this.pos.left=parseInt(triggerPos.left+(triggerPos.width-popbody.offsetWidth)/2);
-				break;
-			default:
-          		console.warn('Wrong arrow prop');	
-		}
-		//限制弹窗主体位置
-		if((this.pos.left+popbody.offsetWidth)>maxWidth){
-			this.pos.left=maxWidth-this.pos.left-140;
-		}
-		else if(this.pos.left<0){
-			this.pos.left=0;
-		}
-		//限制arrow相对弹窗主体位置
-		if((this.arrowPos.left+triangle.offsetWidth)>(this.pos.left+popbody.offsetWidth)){
-			this.arrowPos.left=(this.pos.left+popbody.offsetWidth)-triangle.offsetWidth;
-		}
-		//this.popover默认为true时，获取offset可见宽高
+		this.triangleWidth=triangle.offsetWidth;
+		this.triangleHeight=triangle.offsetHeight;
+		//屏幕可见宽度
+		this.maxWidth = document.documentElement.clientWidth;
+
 		this.popover=false;
-		this.posStyle = {
-			top: this.pos.top+'px',
-			left: this.pos.left+'px',
-		}
-		
-		this.arrowStyle = {
-			top: this.arrowPos.top+'px',
-			left: this.arrowPos.left+'px'
-		}
-  	});
   },
   props:{
   	arrow:{
@@ -109,17 +74,60 @@ export default {
   },
   methods:{
   	open(){
+  		//按钮主体
+  		const trigger = this.$refs.trigger.children[0];
+  		let triggerPos = trigger.getBoundingClientRect();
+
+  		this.$nextTick(() => {
+			//这里的triangle.offsetHeight/2是三角形高度的补偿
+			switch (this.arrow){
+				case 'down' :
+					this.pos.top=parseInt(triggerPos.top-this.popbodyHeight-this.triangleHeight/2);
+					this.pos.left=parseInt(triggerPos.left+(triggerPos.width-this.popbodyWidth)/2);
+					this.arrowPos.left=parseInt(triggerPos.left+(trigger.offsetWidth-this.triangleWidth)/2);
+					//这里的2是为了遮住弹窗主体的边框
+					this.arrowPos.top=parseInt(triggerPos.top-this.triangleHeight+this.triangleHeight/2-2);
+					break;
+				case 'top' :
+					this.arrowPos.left=parseInt(triggerPos.left+(trigger.offsetWidth-this.triangleWidth)/2);
+					this.arrowPos.top=parseInt(triggerPos.top+trigger.offsetHeight-this.triangleHeight/2-2);
+					this.pos.top=parseInt(triggerPos.top+this.triangleHeight);
+					this.pos.left=parseInt(triggerPos.left+(triggerPos.width-this.popbodyWidth)/2);
+					break;
+				default:
+	          		console.warn('Wrong arrow prop');	
+			}
+			//限制弹窗主体位置
+			if((this.pos.left+this.popbodyWidth)>this.maxWidth){
+				this.pos.left=this.maxWidth-this.pos.left-140;
+			}
+			else if(this.pos.left<0){
+				this.pos.left=0;
+			}
+			//限制arrow相对弹窗主体位置
+			if((this.arrowPos.left+this.triangleWidth)>(this.pos.left+this.popbodyWidth)){
+				this.arrowPos.left=(this.pos.left+this.popbodyWidth)-this.triangleWidth;
+			}
+			this.posStyle = {
+				top: this.pos.top+'px',
+				left: this.pos.left+'px',
+			}
+			this.arrowStyle = {
+				top: this.arrowPos.top+'px',
+				left: this.arrowPos.left+'px'
+			}
+  		});
   		this.popover=true;
   		this.$emit("on-show");
   	},
   	close(){
   		this.popover=false;
-  		this.$emit("on-show");
+  		this.$emit("on-hide");
   	},
 
   },
   watch:{
-
+  	
   }
 }
 </script>
