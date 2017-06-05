@@ -1,24 +1,27 @@
 <template>
-  <div class="popover js">
+  <div class="popovers js">
     <goback></goback>
 	
-	<!--点击按钮-->
-	<ai-popover arrow="down" name='fade'>
-		<ai-panel :list="list" slot="content"></ai-panel>
-		<button>打开弹出菜单</button>
-	</ai-popover>
+    <div class="pop-content">
+      <!--点击按钮-->
+      <ai-popover arrow="down" name='fade'>
+        <ai-panel :list="list" slot="content"></ai-panel>
+        <button class="middle-menue" v-cloak>打开弹出菜单</button>
+      </ai-popover>
+      
+      <!--右侧底部-->
+      <ai-popover arrow="down" name='fade'>
+        <ai-panel :list="list" slot="content"></ai-panel>
+        <button class="bottom-menue" v-cloak>菜单</button>
+      </ai-popover>
+      
+      <!--右侧顶部-->
+      <ai-popover arrow="top" name='fade'>
+        <ai-panel :list="list" slot="content"></ai-panel>
+        <button class="top-menue" v-cloak>菜单</button>
+      </ai-popover>
+    </div>
 	
-	<!--右侧底部-->
-	<ai-popover arrow="down" name='fade'>
-		<ai-panel :list="list" slot="content"></ai-panel>
-		<span class="bottom-menue">菜单</span>
-	</ai-popover>
-	
-	<!--右侧顶部-->
-	<ai-popover arrow="top" name='fade'>
-		<ai-panel :list="list" slot="content"></ai-panel>
-		<span class="top-menue">菜单</span>
-	</ai-popover>
 
   </div>
 </template>
@@ -28,38 +31,47 @@
   .pt(90);
 }
 
-button{
-	position: fixed;
-	left: 14%;
-	top: 70%;
-	.width(560);
-  .height(85);
+
+[v-cloak] {
+  display: none;
+}
+.middle-menue{
+  .width(188);
+  .height(36);
+  font-size: 30px;
+  font-family: "MicrosoftYaHeiLight";
+  color: #000;
+  position: relative;
+  top: 800px;
+  left: 300px;
+  z-index: 4;
 }
 
 .bottom-menue{
-	display: block;
-	.width(68);
-	.height(36);
-    font-size: 30px;
-    font-family: "MicrosoftYaHeiLight";
-    color: rgb( 0, 0, 0 );
-    line-height: 1;
-    position: fixed;
-    right: 8%;
-    bottom: 10%;
-}
+  .width(68);
+  .height(36);
+  font-size: 30px;
+  font-family: "MicrosoftYaHeiLight";
+  color: rgb( 0, 0, 0 );
+  line-height: 1;
+  position: relative;
+  top: 1000px;
+  left: 600px;
+  z-index: 4;
+} 
 .top-menue{
-	display: block;
 	.width(68);
 	.height(36);
-    font-size: 30px;
-    font-family: "MicrosoftYaHeiLight";
-    color: rgb( 0, 0, 0 );
-    line-height: 1;
-    position: fixed;
-   	top:7%;
-   	right: 5%;
+  font-size: 30px;
+  font-family: "MicrosoftYaHeiLight";
+  color: #fff;
+  line-height: 1;
+  position: relative;
+  top: -130px;
+  left: 630px;
+  z-index: 4;
 }
+
 </style>
 <script>
 import goback from '../../components/goback';
