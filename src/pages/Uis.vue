@@ -4,7 +4,7 @@
     <router-link to="/uis/button" class="uislink"><i class="icon icon-button"></i>Button 按钮</router-link>
     <router-link to="/uis/form" class="uislink"><i class="icon icon-form"></i>Form 表单</router-link>
     <router-link to="/uis/list" class="uislink"><i class="icon icon-list"></i>List 列表</router-link>
-    <router-link to="/uis/list" class="uislink"><i class="icon icon-search"></i>Search 搜索</router-link>
+    <router-link to="/uis/search" class="uislink"><i class="icon icon-search"></i>Search 搜索</router-link>
     <router-link to="/uis/radio" class="uislink"><i class="icon icon-radio"></i>Radio, Checkbox</router-link>
     <router-link to="/uis/badge" class="uislink"><i class="icon icon-badge"></i>Badge 角标</router-link>
     <router-link to="/uis/cards" class="uislink"><i class="icon icon-card"></i>Card 卡片</router-link>
