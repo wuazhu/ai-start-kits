@@ -69,11 +69,11 @@
   <!-- 左侧tab样式 -->
   <template v-if="isType==='left'">
     <div class="tabBarType3">
-      <div class="">
+      <div class="a-button-container">
         <!-- 默认左侧目录模板 -->
         <!-- <slot name='tab-left'> -->
-           <div v-for="x in list" class=''>
-               <a href="#" title="" class='a-button-l' @click='selectItem(x.id)'>{{x.title}}</a>
+           <div v-for="x in list" class='tab-catalog'>
+               <a href="javascript:;" title="" class='a-button-l' @click='selectItem(x)' :class="{'isActive':!x.selected}">{{x.title}}</a>
                <label style='display:none' >{{x.id}}</label>
           <!--   <a href="#" title="" class='a-button-l'>选项2</a>
             <a href="#" title="" class='a-button-l'>选项3</a> -->
@@ -82,8 +82,9 @@
         <!-- 右侧内容 -->
         <!-- <slot name='tab-left-content'> -->
           <!-- 内容 -->
+          </div>
            <div v-for='x in list' v-if="selected==x.id" class='tab-left-content-container'>
-                <div name='first' >
+                <div name='first' class="tab-left-content-container">
                   <div class='tab-left-title' >
                     <p>选项卡{{x.id}}</p>
                   </div>
@@ -108,7 +109,7 @@
                 </div>
               </div>
         <!-- </slot> -->
-    </div>
+    
     </div>
   </template>
 
@@ -116,14 +117,7 @@
 </template>
 
 <script>
-var filter={
-        selected:function(list){
-          return list.filter(function(item){
-            return item.id
-            console.log(item.id)
-          })
-        }
-      }
+
 export default {
    name: 'TabPane',
    props: {
@@ -141,6 +135,7 @@ export default {
        activeL: true,
        activeM: false,
        activeR: false,
+       activeThis: false,
        visibility:"1",//通过这个属性的值的变化来对数据进行筛选 默认选择第一个
        list:new Array,
        selected:"1"//选中的id
@@ -167,8 +162,15 @@ export default {
       this.activeR=true;
      },
      selectItem(item){
-      console.log(this.list)
-      this.selected=item;
+      // 获取被点击的id
+      this.selected=item.id;
+      // 添加被点击样式
+      item.selected=!item.selected;
+      for (var i = 0; i < this.list.length; i++) {
+        if (this.list[i].id!=item.id) {
+        this.list[i].selected=true;
+        }
+      }
      }
    },
    computed: {
@@ -206,11 +208,6 @@ export default {
       this.$http.get('/api/getTabList')
      .then( (res) => {
        res=JSON.parse(res.bodyText)
-       // this.title=res.bodyText.title;
-       // this.content=res.bodyText.content;
-       // this.img=res.bodyText.img;
-       // this.price=res.bodyText.price;
-       // this.id=res.bodyText.id;
        this.list=res
        console.log(this.list[0].title)
      }, (err) => {
@@ -231,23 +228,4 @@ export default {
 <style lang="less" scoped>
 @import '../../assets/less/config';
 @import '../../assets/less/TabBar';
-.tabBarType3{
-  .tab-content{
-  .height(90);
-  // .width(750);
-  line-height: 90/75*1rem;
-  .pl(45);
-  background-color: white;
-  border-bottom: solid 1px rgb(219, 219, 222);
-  .fs(30);
-  font-family: "Heiti SC";
-  color: rgba(0, 0, 0, 0.871);
-}
-.tab-container{
-  margin-bottom: 400px;
-}
-.right-content-list{
-  .mb(120);
-}
-}
 </style>

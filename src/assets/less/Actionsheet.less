@@ -1,0 +1,145 @@
+@import '../../assets/less/config.less';
+
+.title-container {
+  text-align: center;
+}
+.submitBtn {
+  border-radius: 10px;
+  background-color: rgb(254, 99, 96);
+  .width(640);
+  .height(89);
+  .mt(120);
+  .fs32;
+  font-family: "PingFang SC";
+  color: rgb(255, 255, 255);
+}
+// 底部弹出的提示窗
+.windowBottom{
+  position: fixed;
+  left: 40px;
+  text-align: center;
+  .mt(20);
+  z-index: 2;
+}
+// 提示文字的样式
+.alertMessage{
+  .width(653);
+  .height(180);
+  background-color: white;
+  border:solid 1px white;
+  border-radius: 10px;
+  margin: 0 auto;
+  text-align: center;
+  & p{
+    .fs24;
+    text-align: center;
+    font-family: "MicrosoftYaHei";
+    color: rgb(143, 143, 143);
+  }
+  & .alertMessageDiv{
+    .pt(30);
+    .pb(20);
+    border-bottom: solid 1px rgb(228, 228, 228)
+  }
+}
+//确认取消 按钮样式
+.alertBtnY{
+  & input{
+    .fs32;
+    .pt(25);
+    font-family: "MicrosoftYaHei";
+    color: rgb(255, 0, 0);
+  }
+}
+// 继续发布 按钮样式
+.alertBtnN{
+  .width(653);
+  .height(75);
+  background-color: white;
+  border:solid 1px white;
+  border-radius: 10px;
+  margin: 0 auto;
+  .mt(20);
+  .pt(15);
+  .mb(30);
+  text-align: center;
+  & input{
+    .fs(32);
+    font-family: "MicrosoftYaHei";
+    color: rgb(0, 140, 244);
+  } 
+}
+// 中间弹窗的样式
+.windowMid{
+  position: fixed;
+  left: 40px;
+  text-align: center;
+  .mt(20);
+  z-index: 2;
+  .width(600);
+  .height(275);
+  background-color: white;
+  border-radius: 10px; 
+  position: absolute;
+  top: 400px;
+  left: 70px;
+  & .alertTitle{
+    .width(600);
+    .height(108);
+    border-bottom: solid 1px rgb(228, 228, 228);
+    text-align: center;
+    & p{
+      .mt(75);
+      .fs30;
+      font-family: "Adobe Heiti Std";
+      color: rgb(50, 50, 50);
+    }
+  }
+    & .cancelBtn{
+      display: inline-block;
+      border-right: solid 0.5px rgb(228, 228, 228);
+      & input{
+        .fs34;
+        font-family: "Adobe Heiti Std";
+        color: rgb(184, 184, 184);
+        .pl(80);
+        .pr(100);
+      }
+    }
+    & .confirmBtn{
+        display: inline-block;
+        // border-left: solid 0.5px rgb(228, 228, 228);
+        & input{
+          .fs34;
+          font-family: "Adobe Heiti Std";
+          color: rgb(65, 157, 245);
+          .pl(100);
+          .pr(80);
+      }
+    }
+}
+//弹窗动画
+.alert-enter-active, .alert-leave-active {
+  transition: opacity .1s;
+  // .title-container{
+  //   width: 100%;
+  //   height: 100%;
+  //   z-index: 1;
+  // }
+}
+.alert-enter, .alert-leave-active {
+  opacity: 0;
+  z-index: 1;
+
+}
+//模态效果
+.windowModal{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #949494;
+  opacity: 0.5;
+  z-index: 2;
+}

@@ -242,28 +242,32 @@
       "img":"../../assets/img/tabBar/img.png",
       "content":"文字文字文字文字",
       "price":"16666",
-      "id": "1"
+      "id": "1",
+      "selected":"false"
     },
       {
       "title":"第二个",
       "img":"../../assets/img/tabBar/img.png",
       "content":"文字文字文字文字",
       "price":"26666",
-      "id": "2"
+      "id": "2",
+      "selected":"false"
     },
       {
       "title":"第三个",
       "img":"../../assets/img/tabBar/img.png",
       "content":"文字文字文字文字",
       "price":"36666",
-      "id": "3"
+      "id": "3",
+      "selected":"false"
     },
       {
         "title":"第四个",
         "img":"../../assets/img/tabBar/img.png",
         "content":"文字文字文字文字",
         "price":"46666",
-        "id": "4"
+        "id": "4",
+        "selected":"false"
       }
   ]
 }

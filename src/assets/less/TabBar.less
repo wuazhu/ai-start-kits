@@ -140,12 +140,20 @@
 }
 /*左侧选项卡样式*/
 .tabBarType3{
-	.catalog{
+	.width(750);
+.tab-catalog{
+	// float: left;
+	.width (200);
+	// display: inline-block;
+}
+.a-button-container{
+	.width (200);
 	float: left;
+	display: inline-block;
 }
 .a-button-l{
 	display: inline-block;
-  	width:200px;
+	.width (200);
   	height:80px;
   	line-height: 80px;
   	text-align: center;
@@ -182,14 +190,14 @@
   	font-family: "MicrosoftYaHei";
   	color: rgb(80, 80, 80);
   	line-height: 60px;
-	background-color: rgb(248, 248, 248);
+	background-color: rgb(229, 229, 229);
 	& p{
-		padding-left: 220px;
+		padding-left: 20px;
 	}
 }
 .tab-left-content{
 	/*float: left;*/
-	padding-left: 200px;
+	// padding-left: 200px;
 	font-size: 24px;
   	font-family: "MicrosoftYaHei";
   	color: rgb(81, 81, 81);
@@ -205,8 +213,9 @@
 	border-bottom: solid 1px rgb(248, 248, 248);
 }
 .tab-left-content-container{
+	// float: right;
 	display: inline-block;
-	width: 545px;
+	.width(545);
 	height: 160px;
 }
 .tab-left-content-title{
@@ -218,7 +227,7 @@
 }
 .tab-left-content-content{
 	display: inline-block;
-	width: 365px;
+	.width(365);
 	// height: 120px;
 }
 .tab-left-content-content p{
@@ -239,5 +248,9 @@
 	margin-top: 10px;
 	margin-bottom: -5px;
 }
-
+.isActive{
+	border-left: solid 4px rgb(65, 157, 245);
+	background-color: white;
+	color: black;
+}
 }

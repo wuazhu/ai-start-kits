@@ -110,22 +110,7 @@ export default {
   components: {
     goback,
     AiTabBar
-  },
-   created(){
-      this.$http.get('/api/getTabList')
-     .then( (res) => {
-       res=JSON.parse(res.bodyText)
-       // this.title=res.bodyText.title;
-       // this.content=res.bodyText.content;
-       // this.img=res.bodyText.img;
-       // this.price=res.bodyText.price;
-       // this.id=res.bodyText.id;
-       this.list=res
-       console.log(this.list[0].title)
-     }, (err) => {
-       console.log(err)
-     })
-    }
+  }
 }
 </script>
 <style lang="less" scoped>
@@ -145,6 +130,6 @@ export default {
   margin-bottom: 400px;
 }
 .right-content-list{
-  .mb(120);
+  .mb(320);
 }
 </style>

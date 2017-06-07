@@ -1,10 +1,11 @@
 <template>
-  <div class="index-list js">
-    <goback></goback>
-    i am index-list page
+  <div class='indexListContainer'>
+  	<div class="index-list js">
+		<goback></goback>
+  	</div>
   </div>
 </template>
-<style lang="less">
+<style lang="less" scoped>
 @import '../../assets/less/config';
 .js{
   .pt(90);
@@ -12,9 +13,11 @@
 </style>
 <script>
 import goback from '../../components/goback'
+import AiIndexList from '../../components/IndexList/AiIndexList'
 export default {
   components: {
-    goback
+    goback,
+    AiIndexList
   }
 }
 </script>
