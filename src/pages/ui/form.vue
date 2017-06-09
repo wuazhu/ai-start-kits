@@ -4,12 +4,9 @@
       <goback></goback>
     </div>
     <div class="form">
-      <div class="search-input">
-        <ai-search  v-bind:optionsdata="single.originOptions" v-bind:selecteddata="single.selected" v-on:selected="singleCallback"></ai-search>
-      </div>
-      <div class="search-input1">
-        <ai-search1></ai-search1>
-      </div>
+  <!--     <div class="search-input">
+        <ai-search label="搜索" v-bind:optionsdata="single.originOptions" v-bind:selecteddata="single.selected" v-on:selected="singleCallback"></ai-search>
+      </div> -->
       <div>
         <h2 class="form-title">表单</h2>
       </div>

@@ -42,7 +42,7 @@
         <p>图标左对齐</p>
       </div>
       <div class="container-left">
-        <div class="div1"><ai-checkbox class='checkbox' v-model='Checkbox1' label='选项1' :right='false' :left="true">选项1</ai-checkbox></div>
+        <div class="div1"><ai-checkbox class='checkbox' v-model='Checkbox1' label='选项1' :right='false' :left="true">选项</ai-checkbox></div>
         <div class="div1"><ai-checkbox class='checkbox' v-model='Checkbox2' label='选项2' :right='false' :left="true">选项2</ai-checkbox></div>
         <div><ai-checkbox class='checkbox' v-model='Checkbox3' label='选项3' :right='false' :left="true">选项3</ai-checkbox></div>
       </div>

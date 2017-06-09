@@ -1,12 +1,16 @@
 <template>
-  <div class="functional-select-wrapper" v-on:click.stop="singleFocus()">
+  <div class="functional-select-wrapper" >
       <div class="options-container">
           <div class="search-container">
-            <input placeholder="搜索" class="search" v-model="search" v-on:keyup="singleSearch()" v-on:click.stop />
+            <section class="search-box " :class="{'placeholderCss':!showText}">
+              <label class="icon-q" for="q" :class="{'icon-q-mid':!showIcon}" >搜索</label>
+              <input type="text" id="q" class="text" :class="{'selectedCss':!showText}" name="search-input" :placeholder='label'  v-model="search" v-on:keyup="singleSearch" v-on:click.stop v-on:blur='blur' v-on:click='singleFocus'/>
+               <!-- <label class="icon-d" :class="{'icon-q-mid':!showIcon}" >删除</label> -->
+            </section>
           </div>
           <ul class="options-ul-list" v-show='isSelected'>
             <!-- <li v-show="!result">没有查询到数据</li> -->
-            <li v-for="item in displayOptions" v-on:click.stop.prevent="singleSelect(item.id)" v-bind:class=" (item.id == selected.id)? selected:'' ">{{ item.name }}</li>
+            <li v-for="item in displayOptions" v-on:click.stop.prevent="singleSelect(item.id)" v-bind:class=" (item.id == selected.id)? selected:''" >{{ item.name }}</li>
           </ul>
      </div>
   </div>
@@ -14,18 +18,20 @@
 
 <script>
 export default {
-  props: ['optionsdata','selecteddata'],
+  props: ['optionsdata','selecteddata','label'],
 	data: function() {
 		var data = {
             originOptions: [],
             displayOptions: [],
             show: false,
+            showIcon: false,
+            showText: true,
             search: '',
             selected: {
                 id: "",
                 name: ""
             },
-            isSelected: true
+            isSelected: false
 		}
 		return data
 	},
@@ -42,6 +48,8 @@ export default {
             // console.log('option new: ' + JSON.stringify(val))
             this.originOptions = val;
             this.show = false;
+            this.showText=false;
+            this.showIcon=false;
             // 默认值
             if (this.selected.id == ''){
                 this.selected = this.originOptions[0];
@@ -61,6 +69,9 @@ export default {
                 document.body.click();
                 console.log('single show')
                 this.show = true;
+                this.showText=true;
+                this.showIcon=true;
+                this.isSelected=true;
                 this.singleSearch();
                 this.searchInputFocus();
             }
@@ -72,7 +83,7 @@ export default {
             var searchInput = this.$el.getElementsByClassName('search-input')[0];
 
             this.$nextTick(function(){
-                searchInput.focus();
+                // searchInput.focus();
             })
 
         },
@@ -97,6 +108,9 @@ export default {
             this.$emit('selected', this.selected)
             // console.log('选中的是' + JSON.stringify(this.selected))
             console.log(this.selected.name);
+            // this.show=true
+            this.showIcon=true
+            this.showText=true
         },
         singleSearch: function(){
             var mySelf = this;
@@ -115,17 +129,40 @@ export default {
                     mySelf.displayOptions.push(item)
                 }
             }
+            // this.isSelected=true
+            this.show=true;
+            this.showText=true;
+            this.showIcon=true;
+            // this.isSelected=true;
+            console.log('正在匹配')
         },
         blur: function(){
             console.log('hide single！！')
             this.show = false;
-            this.search = '';
+            if(this.search==''){
+              this.showText= false;
+              this.showIcon= false;
+              // this.isSelected=false;
+            }
+            else{
+              this.showText =true;
+              this.showIcon =true;
+            }
+            // this.search = '';
+        },
+        delete: function(){
+          console.log('清空搜索框');
+          this.search='';
         }
-	}
+	},
+  computed:{
+
+  }
+
 }
 </script>
 
-<style lang="less" scope>
+<style lang="less" scoped>
 @import '../../../src/assets/less/config.less';
 @wd:712;
 @ht:58;
@@ -160,7 +197,7 @@ export default {
 }
 
 .functional-select-wrapper .options-container .options-ul-list li{
-	height: 48px;
+	.height(48);
   .width(@wd);
 	line-height: 48px;
 	// box-sizing: border-box;
@@ -176,5 +213,52 @@ export default {
 
 .functional-select-wrapper .options-container .options-ul-list .selected{
 	background-color: #DDD;
+}
+.icon-q{
+  .width(56);
+  .height(60);
+  // .mb(0);
+  background:url(../../assets/img/form/icon-query.png) no-repeat center center;display:inline-block;overflow:hidden;position:absolute;;text-indent:-999em;
+  background-color: white;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+}
+.text{
+  .width(656);
+  .height(56);
+  .ml(54);
+  line-height:56/75*1rem;
+  background:#fff;
+  border:0;
+  // border-radius:10px;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+  outline: none;
+  .fs28;
+  // display:block;
+}
+.search-box{
+  .width(712);
+  .height(56);
+  .ml(16);
+
+}
+// placeholder居中样式 
+.placeholderCss{
+  input::-ms-input-placeholder{text-align: center;} 
+  input::-webkit-input-placeholder{text-align: center;}
+}
+//搜索icon 居中样式
+.icon-q-mid{
+    .ml(275); 
+}
+//搜索框被选中时的样式
+.selectedCss{
+  .width(712);
+  .height(56);
+  .ml(0);
+  border-bottom-left-radius:10px;
+  border-top-left-radius: 10px;
+  text-indent: 10px; 
 }
 </style>

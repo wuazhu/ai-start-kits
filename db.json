@@ -269,5 +269,58 @@
         "id": "4",
         "selected":"false"
       }
+  ],
+  "getIndexListData":[
+      {
+        "Tag":"A",
+        "cityName":["阿克苏"]
+      },
+      {
+        "Tag":"B",
+        "cityName":[
+          "北京","包头"
+        ]
+      },
+      {
+        "Tag":"C",
+        "cityName":["成都"]
+      },
+      {
+        "Tag":"D",
+        "cityName":[
+          "大连","大庆"
+        ]
+      },
+      {
+        "Tag":"E",
+        "cityName":[
+          "鄂州","鄂尔多斯"
+        ]
+      },{
+        "Tag":"F",
+        "cityName":[
+          "丰宁","丰台区"
+        ]
+      },{
+        "Tag":"G",
+        "cityName":["赣州"]
+      },
+      {
+        "Tag":"H",
+        "cityName":["杭州"]
+      },
+      {
+        "Tag":"I",
+        "cityName":["印度"]
+      },
+      {
+        "Tag":"J",
+        "cityName":["荆州"]
+      },
+      {
+        "Tag":"K",
+        "cityName":["开封"]
+      }
   ]
+
 }

@@ -1,0 +1,62 @@
+@import  "../../assets/less/config";
+  .check-label{
+    display: block;
+    .mb(6);
+    .ml(80);
+    line-height: 19px;
+    font-weight: 400;
+    .fs30;
+    color: rgb( 32, 32, 32);
+    // text-align: left;
+  }
+  .span1{
+    .mr(25);
+  }
+.checkbox input[type="checkbox"] {
+      display: none;
+  }
+.checkbox input[type="checkbox"]+.span1{
+      display: inline-block;
+      width: 44px;
+      height: 44px;
+      vertical-align: middle;
+      border-radius: 50%;
+      border: 2px solid rgb(169, 169, 169);
+      background-color: white;
+  }
+.checkbox input[type="checkbox"]:checked+.span1 {
+      border: 2px solid rgb(65, 157, 245);
+      background:url(../../assets/img/radio/radio_on.png) no-repeat;
+      background-position: 9.5px 9.5px
+  }
+//列表选中样式 显示对勾
+.checkbox input[type="checkbox"]+.span2{
+      display: inline-block;
+      width: 44px;
+      height: 44px;
+      vertical-align: middle;
+      border-radius: 50%;
+      border: 0;
+      // border: 2px solid rgb(169, 169, 169);
+      background-color: white;
+  }
+.checkbox input[type="checkbox"]:checked+.span2 {
+      // border: 2px solid rgb(65, 157, 245);
+      border: 0;
+      background:url(../../assets/img/radio/selected.png) no-repeat;
+      background-position: 9.5px 9.5px
+  }
+//  左对齐样式
+.is-left .span1{
+
+}
+//右对齐样式
+.is-right .span1{
+  .ml(565);
+  .mr(-625);
+}
+//列表样式
+.is-list .span2{
+  .ml(565);
+  .mr(-625);
+}
