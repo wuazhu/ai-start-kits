@@ -14,6 +14,6 @@
 
   };
 </script>
-<style lang='less' scope>
+<style lang='less' scoped>
 @import "../../assets/less/Switch.less";
 </style>

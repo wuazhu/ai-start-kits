@@ -11,7 +11,7 @@ export default {
 }
 </script>
 
-<style lang="less">
+<style lang="less" scoped>
 @import '../../../src/assets/less/config.less';
 // .search-box{
 //   .width(712);

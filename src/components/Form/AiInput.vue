@@ -73,7 +73,7 @@ input{
 } -->
 <!-- </style> -->
 
-<style lang='less'>
+<style lang='less' scoped>
   @import "../../assets/less/Input";
   @import "../../assets/less/Label.less";
 </style>
