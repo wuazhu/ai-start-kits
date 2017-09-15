@@ -38,12 +38,11 @@
       <!-- <div class="height"></div> -->
     </div>
 </template>
-<style lang="less">
+<style lang="less" scoped>
 // less配置文件
 @import '../assets/less/config.less';
 body{
   .pb(99)!important;
-
 }
 .app-view {
   // background: orange;
